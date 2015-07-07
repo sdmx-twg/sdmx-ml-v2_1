@@ -22,13 +22,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="MetadataStructureWhere" type="MetadataStructureWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>MetadataStructureWhere contains the parameters for a metadata structure definition query. All parameters must be matched for an object to satisfy the query. The query is simply a refinement of the base structure query to make the parameters specific to the metadata structure definition.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="MetadataStructureWhereBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>MetadataStructureWhereBaseType is an abstract base type the forms the basis for the MetadataStructureWhereType.</xs:documentation>
@@ -94,13 +94,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="TargetObjectWhere" type="TargetObjectWhereType" substitutionGroup="ComponentWhere">
     <xs:annotation>
       <xs:documentation>IdentifierComponentWhere is used to query for specific target identifiers or metadata structure definitions where a contained identifier component meets the conditions detailed. This is an implicit set of "and" parameters, that is the conditions within this must all be met in order to return a match.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="TargetObjectWhereBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>TargetObjectWhereBaseType is an abstract base type that forms the basis for the TargetObjectWhereType.</xs:documentation>
@@ -141,7 +141,7 @@
       <xs:documentation>ReportStructureWhere is used to query for metadata structure definitions where a given report structure meets the conditions specified. A report structure can be queried based on identification or details about its metadata attributes. This is an implicit set of "and" parameters, that is the conditions within this must all be met in order to return a match.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ReportStructureWhereType">
     <xs:annotation>
       <xs:documentation>ReportStructureWhereType defines the parameters for matching based on the details of a report structure. This is used to query for metadata structure definitions where a given report structure meets the conditions specified. A report structure can be queried based on identification and details about its metadata attributes. This is an implicit set of "and" parameters, that is the conditions within this must all be met in order to return a match.</xs:documentation>
@@ -164,7 +164,7 @@
       <xs:documentation>MetadataAttributeWhere is a parameter which is used in a report structure parameter or to query metadata structure definitions where a contained metadata attribute meets the conditions specified. A metadata attribute can be queried based on its identification, the concept from which it takes its semantic, and an item scheme it uses as its representation. Nested metadata attributes allow for the querying of metadata attributes explicitly at nested level, although a top level metadata attribute query will be processed by querying metadata attributes at any level. This is an implicit set of "and" parameters, that is the conditions within this must all be met in order to return a match.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="MetadataAttributeWhereBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>MetadataAttributeWhereBaseType is an abstract base type that forms the basis for the MetadataAttributeWhereType.</xs:documentation>
@@ -179,7 +179,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataAttributeWhereType">
     <xs:annotation>
       <xs:documentation>MetadataAttributeWhereType describes the parameters for a metadata attribute. A metadata attribute can be queried based on its identification, the concept from which it takes its semantic, and an item scheme it uses as its representation. Nested metadata attributes allow for the querying of metadata attributes explicitly at nested level, although a top level metadata attribute query will be processed by querying metadata attributes at any level. This is an implicit set of "and" parameters, that is the conditions within this must all be met in order to return a match.</xs:documentation>

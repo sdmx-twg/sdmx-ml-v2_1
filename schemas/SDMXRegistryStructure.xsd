@@ -63,7 +63,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="SubmitStructureResponseType">
     <xs:annotation>
       <xs:documentation>SubmitStructureResponseType describes the structure of a response to a structure submission. For each submitted structure, a Result will be returned.</xs:documentation>
@@ -94,5 +94,5 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
 </xs:schema>

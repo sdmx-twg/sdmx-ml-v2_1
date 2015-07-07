@@ -22,13 +22,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="DataflowWhere" type="DataflowWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>DataflowWhere defines the parameters for a dataflow query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a dataflow based on the key family it defines the usage of.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="DataflowWhereType">
     <xs:annotation>
       <xs:documentation>DataflowWhereType contains the parameters of a dataflow query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>

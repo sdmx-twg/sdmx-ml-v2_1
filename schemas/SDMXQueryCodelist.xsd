@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="CodelistWhere" type="CodelistWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>CodelistWhere defines the parameters for a codelist query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a codlist based on the details of its codes. In any case, the codelist will be returned according the indicated return detail.</xs:documentation>

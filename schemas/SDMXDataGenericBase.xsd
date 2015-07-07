@@ -6,7 +6,7 @@
   <xs:annotation>
     <xs:appinfo>SDMX Base Generic Data Module</xs:appinfo>
     <xs:documentation>The base generic data module contains the descriptions of base generic data set format. The data set defined here describes the structure of the data set in all generic data messages. Any generic data messages must derive the data set from this format.</xs:documentation>
-  </xs:annotation>  
+  </xs:annotation>
 
   <xs:complexType name="DataSetType">
     <xs:annotation>
@@ -43,11 +43,11 @@
             </xs:element>
           </xs:choice>
         </xs:sequence>
-        <xs:attributeGroup ref="common:SetAttributeGroup"/> 
+        <xs:attributeGroup ref="common:SetAttributeGroup"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="GroupType">
     <xs:annotation>
       <xs:documentation>GroupType defines a structure which is used to communicate attribute values for a group defined in a data structure definition. The group can consist of either a subset of the dimensions defined by the data structure definition, or an association to an attachment constraint, which in turn defines key sets to which attributes can be attached. In the case that the group is based on an attachment constraint, only the identification of group is provided. It is expected that a system which is processing this will relate that identifier to the key sets defined in the constraint and apply the values provided for the attributes appropriately.</xs:documentation>
@@ -74,7 +74,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="SeriesType">
     <xs:annotation>
       <xs:documentation>SeriesType defines a structure which is used to group a collection of observations which have a key in common. The key for a series is every dimension defined in the data structure definition, save the dimension declared to be at the observation level for this data set. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the observation dimension). It is possible for the series to contain only observations or only attribute values, or both.</xs:documentation>
@@ -101,7 +101,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ObsOnlyType">
     <xs:annotation>
       <xs:documentation>ObsOnlyType defines the structure for an un-grouped observation. Unlike a group observation, an un-grouped must provided a full set of values for every dimension declared in the data structure definition. The observation can contain an observed value and/or a collection of attribute values.</xs:documentation>
@@ -128,7 +128,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ObsType">
     <xs:annotation>
       <xs:documentation>ObsType defines the structure of a grouped observation. The observation must be provided a value for the dimension which is declared to be at the observation level for this data set. This dimension value should disambiguate the observation within the series in which it is defined (i.e. there should not be another observation with the same dimension value). The observation can contain an observed value and/or attribute values.</xs:documentation>
@@ -155,7 +155,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ValuesType">
     <xs:annotation>
       <xs:documentation>ValuesType is a general structure which contains a collection of data structure definition component values. This type is used to provide both key and attribute collection values.</xs:documentation>
@@ -168,7 +168,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="BaseValueType">
     <xs:annotation>
       <xs:documentation>BaseValueType is a general structure which contains a reference to a data structure definition component and a value for that component. In this structure the reference to the component is optional to allow for usages where the actual reference might be provided in another context.</xs:documentation>
@@ -183,8 +183,8 @@
         <xs:documentation>The value attribute contains the provided component value.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-  </xs:complexType> 
-  
+  </xs:complexType>
+
   <xs:complexType name="ObsValueType">
     <xs:annotation>
       <xs:documentation>ObsValueType is a derivation of the BaseValueType which is used to provide an observation value. Since an observation value is always associated with the data structure definition primary measure, and the identifier for the primary measure is fixed, the component reference for this structure is fixed. Note that this means that it is not necessary to provide a value in an instance as the fixed value will be provided in the post validation information set.</xs:documentation>
@@ -196,11 +196,11 @@
             <xs:documentation>The id attribute contains a fixed reference to the primary measure component of the data structure definition.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="value" type="xs:string" use="required"/>        
+        <xs:attribute name="value" type="xs:string" use="required"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ComponentValueType">
     <xs:annotation>
       <xs:documentation>ComponentValueType is a derivation of the BaseValueType which requires that the component reference be provided. This is used when the identification of the component cannot be inferred from another context.</xs:documentation>
@@ -212,5 +212,5 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

@@ -8,7 +8,7 @@
     <xs:appinfo>SDMX Time Series Generic Data Module</xs:appinfo>
     <xs:documentation>The time series generic data module contains the descriptions of a derivation of the base generic data set format which only allows for data organised as time series. A data set structured according to the data set defined here is a valid base generic data set, and can be processed using the same rules as those for the base format. The difference in this structure is that the data is assured to be organised as time series. This allows for variations of the generic data message which restrict the data to only be formatted as time series.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="TimeSeriesDataSetType">
     <xs:annotation>
       <xs:documentation>TimeSeriesDataSetType is a derivation of the base DataSetType of the generic format the restricts the data set to only allow for grouped observations where the dimension at the observation level is the time dimension of the data structure definition. This means that unlike the base data set structure, there can be no un-grouped observations. Because this derivation is achieved using restriction, data sets conforming to this type will inherently conform to the base data set structure as well. In fact, data structured here will be identical to data in the base data set when the time dimension is the observation dimension. This means that the data contained in this structure can be processed in exactly the same manner as the base structure.</xs:documentation>
@@ -31,7 +31,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TimeSeriesType">
     <xs:annotation>
       <xs:documentation>TimeSeriesType defines a structure which is used to group a collection of observations which have a key in common, organised by time. The key for a series is every dimension defined in the data structure definition, save the time dimension. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the time dimension). It is possible for the series to contain only observations or only attribute values, or both.</xs:documentation>
@@ -51,7 +51,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TimeSeriesObsType">
     <xs:annotation>
       <xs:documentation>TimeSeriesObsType defines the structure of a time series observation. The observation must be provided a value for the time dimension. This time value should disambiguate the observation within the series in which it is defined (i.e. there should not be another observation with the same time value). The observation can contain an observed value and/or attribute values.</xs:documentation>
@@ -71,7 +71,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TimeValueType">
     <xs:annotation>
       <xs:documentation>TimeValueType is a derivation of the BaseValueType which is used to provide a value for the time dimension. Since the identifier for the time dimension is fixed, the component reference for this structure is fixed. Note that this means that it is not necessary to provide a value in an instance as the fixed value will be provided in the post validation information set.</xs:documentation>
@@ -83,5 +83,5 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

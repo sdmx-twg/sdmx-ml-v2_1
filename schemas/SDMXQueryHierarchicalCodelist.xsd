@@ -8,7 +8,7 @@
     <xs:appinfo>SDMX Hierarchical Code List Query Module</xs:appinfo>
     <xs:documentation>The hierarchical code list query module provides the construct of a query for a hierarchical code list.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="HierarchicalCodelistQueryType">
     <xs:annotation>
       <xs:documentation>HierarchicalCodelistQueryType defines the structure of a hierarchical codelist query. The parameters for the query are contained in the HierarchicalCodelistWhere element. The References element is used to indicate how objects that are referenced from the matched hierarchical codelist should be returned.</xs:documentation>
@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="HierarchicalCodelistWhere" type="HierarchicalCodelistWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>HierarchicalCodelistWhere defines the parameters for a hierarchical codelist query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a hierarchical codelist based on the codelists it arranges into hierarchies.</xs:documentation>
@@ -55,7 +55,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HierarchicalCodelistWhereType">
     <xs:annotation>
       <xs:documentation>HierarchicalCodelistWhereType contains the parameters of a hierarchical codelist query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>

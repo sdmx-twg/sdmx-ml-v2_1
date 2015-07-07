@@ -2,14 +2,14 @@
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
 <xs:schema elementFormDefault="qualified" targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:query="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Base Query Module</xs:appinfo>
     <xs:documentation>The base query module provides the basic constructs of structural metadata and data/metadata queries.</xs:documentation>
   </xs:annotation>
-  
+
   <!-- Base Query Constructs -->
-  
+
   <xs:complexType name="ReturnDetailsBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>ReturnDetailsBaseType is an abstract type that forms the basis for any query return details.</xs:documentation>
@@ -25,7 +25,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <!-- Base Structural Metadata Query Constructs -->
 
   <xs:complexType name="StructuralMetadataQueryType" abstract="true">
@@ -37,7 +37,7 @@
       <xs:element ref="StructuralMetadataWhere"/>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureReturnDetailsBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>StructureReturnDetailsBaseType is an abstract base type which forms the basis of StructureReturnDetailsType.</xs:documentation>
@@ -48,11 +48,11 @@
           <xs:annotation>
             <xs:documentation>The detail attribute is used to indicate whether the response to the query should return the full details of matched objects, or just a subset of the information should be returned. A value of "Full" indicates that the full details of all matched objects should be returned. A value of "CompleteStub" indicates that the identification information, name, description, and annotations for the matched object should be returned. A value of "Stub" indicates that just the identification information and name should be returned for the matched objects. Note that this applies only to the object(s) matched by the query parameters. The References element has a separate field for indicating the level of detail returned for referenced objects.</xs:documentation>
           </xs:annotation>
-        </xs:attribute>       
+        </xs:attribute>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureReturnDetailsType">
     <xs:annotation>
       <xs:documentation>StructureReturnDetailsType defines the structure of the return details for any structural metadata query.</xs:documentation>
@@ -89,7 +89,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReferencesType">
     <xs:annotation>
       <xs:documentation>ReferencesType defines the structure for indicating which referenced objects should be returned in a structural metadata query. It is possible to return both objects which reference the object(s) matched by the query and objects referenced from the match object(s). The type(s) of reference objects to be returned consists of a choice between None, All, Default, or an explicit list of object types.</xs:documentation>
@@ -124,12 +124,12 @@
         <xs:annotation>
           <xs:documentation>Descendants is a convenience to indicate that all object referred to by the matched object should be returned, along with any objects referenced by the referred objects, and so on. This is a deep resolution, where all outgoing references starting at the matched object are resolved.</xs:documentation>
         </xs:annotation>
-      </xs:element>     
+      </xs:element>
       <xs:element name="SpecificObjects" type="common:MaintainableObjectTypeListType">
         <xs:annotation>
           <xs:documentation>SpecificObjects is used to enumerate specific types of object to be returned. Theses objects will either refer to or are referred by the matched object. Only the maintainable objects listed here will be returned.</xs:documentation>
         </xs:annotation>
-      </xs:element>   
+      </xs:element>
     </xs:choice>
     <xs:attribute name="processConstraints" type="xs:boolean" default="false">
       <xs:annotation>
@@ -175,7 +175,7 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:simpleType name="MaintainableReturnDetailType">
     <xs:annotation>
       <xs:documentation>MaintainableReturnDetailType contains a sub set of the enumerations defined in the ReturnDetailType. Enumerations relating specifically to item schemes are not included</xs:documentation>
@@ -186,13 +186,13 @@
       <xs:enumeration value="Full"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:element name="StructuralMetadataWhere" type="MaintainableWhereType" abstract="true">
     <xs:annotation>
       <xs:documentation>StructuralMetadataWhere is an abstract substitution head that forms the basis of any structural metadata query's details. This contains the actual parameters to be matched. These parameters are implicitly joined by an "and" connector (i.e. each of the parameters must be matched in order to satisfy the query). If it is necessary to supply "or" conditions for a parameter, this should be done by supplying multiple queries.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="AnnotableWhereType" abstract="true">
     <xs:annotation>
       <xs:documentation>AnnotableWhereType is an abstract base type for querying an annotable artefact.</xs:documentation>
@@ -205,7 +205,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="AnnotationWhereType">
     <xs:annotation>
       <xs:documentation>AnnotationWhereType defines the structure for querying the details of an annotation.</xs:documentation>
@@ -250,7 +250,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="NameableWhereType" abstract="true">
     <xs:annotation>
       <xs:documentation>NameableWhereType is an abstract base type that serves as the basis for any query for a nameable object.</xs:documentation>
@@ -267,12 +267,12 @@
             <xs:annotation>
               <xs:documentation>Description is used to match the description of the identified object. It may occur multiple times for its usage within an or-query or for multi-lingual searches, however if multiple values are supplied in an and-query (explicit or implicit), each description search will have to be found in order to constitute a match. The value here can either be an explicit value (exact match) or a regular expression pattern on which to match.</xs:documentation>
             </xs:annotation>
-          </xs:element>         
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="VersionableWhereType" abstract="true">
     <xs:annotation>
       <xs:documentation>VersionableQueryType is an abstract base type that serves as the basis for any query for a versionable object.</xs:documentation>
@@ -362,7 +362,7 @@
           </xs:element>
           <xs:sequence maxOccurs="unbounded">
             <xs:element ref="ItemWhere"/>
-          </xs:sequence>          
+          </xs:sequence>
         </xs:choice>
       </xs:extension>
     </xs:complexContent>
@@ -420,7 +420,7 @@
       <xs:documentation>ComponentWhere is an abstract substitution head to query for a component within a component list or a structure. A component where query is implicitly an and-query - that is the conditions within the component where must all be met in order to return a match.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ComponentWhereType" abstract="true">
     <xs:annotation>
       <xs:documentation>ComponentWhereType is an abstract base type that serves as the basis for a query for a component within a component list where or a structure query. A concept identity and a local representation condition are available to seek a component that utilizes a particular concept or representation scheme. The conditions within a component query are implied to be in an and-query. If an id and a concept identity condition are supplied, then both conditions will have to met in order for the component query to return true. If, for instance, a query based on names in multiple languages is required, then multiple instances of the element utilizing this type should be used within an or-query container.</xs:documentation>
@@ -459,9 +459,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <!-- Base Data Query Constructs -->
-  
+
   <xs:complexType name="ConceptValueType">
     <xs:annotation>
       <xs:documentation>ConceptValueType describes the structure of a query for the value of the underlying concept of a component. It provides a reference to a concept in a concept scheme via a URN and/or a complete set of reference fields, as well as a numeric, text, or un-typed value.</xs:documentation>
@@ -494,9 +494,9 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <!-- Common Parameter Types -->
-  
+
   <xs:element name="NumericValue" type="NumericValueType">
     <xs:annotation>
       <xs:documentation>NumericValue is used to query for a the value of a concept or component based on a numeric search. This is typically used when the value needs to be searched explicitly as a number, such as when data is sought with an observed value greater than some threshold. If only a simple match is required (i.e. the numeric value equals 'x') then the Value element can be used.</xs:documentation>
@@ -550,7 +550,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:complexType name="QueryStringType">
     <xs:annotation>
       <xs:documentation>QueryStringType defines the structure of a string query.</xs:documentation>
@@ -563,9 +563,9 @@
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
-    </xs:simpleContent> 
+    </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:complexType name="QueryIDType">
     <xs:annotation>
       <xs:documentation>QueryIDType defines the structure of a query for an identifier.</xs:documentation>
@@ -578,9 +578,9 @@
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
-    </xs:simpleContent> 
+    </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:complexType name="QueryNestedIDType">
     <xs:annotation>
       <xs:documentation>QueryNestedIDType defines the structure of a query for a nested identifier.</xs:documentation>
@@ -593,9 +593,9 @@
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
-    </xs:simpleContent> 
+    </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:complexType name="QueryTextType">
     <xs:annotation>
       <xs:documentation>QueryTextType describes the structure of a textual query value. A language must be specified if parallel multi-lingual values are available, otherwise it is ignored.</xs:documentation>
@@ -630,14 +630,14 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="ReportingYearStartDayQueryType">
     <xs:annotation>
       <xs:documentation>ReportingYearStartDayQueryType is a simple type for specifying the reporting year start day in a time query parameter. An explicit value or "Any" can be provided.</xs:documentation>
     </xs:annotation>
     <xs:union memberTypes="AnyQueryType xs:gMonthDay"/>
   </xs:simpleType>
-  
+
   <xs:simpleType name="AnyQueryType">
     <xs:annotation>
       <xs:documentation>AnyQueryType is a single enumeration of the value "Any" which is meant to be used in union with other simple types when a query allows for any of the possible values.</xs:documentation>
@@ -646,5 +646,5 @@
       <xs:enumeration value="Any"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

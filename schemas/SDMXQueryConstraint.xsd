@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ConstraintWhere" type="ConstraintWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>AttachmentConstraintWhere contains the parameters for a constraint query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a constraint based on the objects it applies to.</xs:documentation>
@@ -77,7 +77,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConstraintAttachmentWhereType">
     <xs:annotation>
       <xs:documentation>ConstraintAttachmentWhereType describes the structure for querying for a constraint based on the objects it is attached to. A constraint attachment query is implicitly an and-query meaning all of the referenced objects must be part of a constraints attachment in order to return a match. It is treated as a condition within its parent query.</xs:documentation>
@@ -130,7 +130,7 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
-  
+
   <xs:simpleType name="ConstraintTypeCodelistType">
     <xs:annotation>
       <xs:documentation>ConstraintTypeCodelistType defines a list of types for a constraint for the purpose of querying.</xs:documentation>
@@ -141,5 +141,5 @@
       <xs:enumeration value="ContentConstraint"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

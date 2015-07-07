@@ -22,13 +22,13 @@
     <xs:appinfo>SDMX Structure Namespace Module</xs:appinfo>
     <xs:documentation>The structure namespace module contains the descriptions of structural metadata such as key families, concepts, and codelists. For convenience, this module has been broken down into sub-modules for the different type of structural constructs.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:element name="Structures" type="StructuresType">
     <xs:annotation>
       <xs:documentation>Structures contains constructs for all structural metadata components.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="StructuresType">
     <xs:annotation>
       <xs:documentation>StructuresType describes the structure of the container for all structural metadata components. The structural components may be explicitly detailed, or referenced from an external structure document or registry service. Best practices dictate that, at a minimum, any structural component that is referenced by another structural component be included by reference.</xs:documentation>
@@ -223,9 +223,9 @@
           <xs:field xpath="@version"/>
         </xs:unique>
       </xs:element>
-    </xs:sequence>  
+    </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="OrganisationSchemesType">
     <xs:annotation>
       <xs:documentation>OrganisationSchemesType describes the structure of the organisation schemes container. It contains one or more organisation scheme, which can be explicitly detailed or referenced from an external structure document or registry service.</xs:documentation>
@@ -238,7 +238,7 @@
         <xs:unique name="AgencyScheme_UniqueAgency">
           <xs:selector xpath="structure:Agency"/>
           <xs:field xpath="@id"/>
-        </xs:unique>        
+        </xs:unique>
       </xs:element>
       <xs:element name="DataConsumerScheme" type="DataConsumerSchemeType">
         <xs:annotation>
@@ -247,7 +247,7 @@
         <xs:unique name="DataConsumerScheme_UniqueDataConsumer">
           <xs:selector xpath="structure:DataConsumer"/>
           <xs:field xpath="@id"/>
-        </xs:unique>        
+        </xs:unique>
       </xs:element>
       <xs:element name="DataProviderScheme" type="DataProviderSchemeType">
         <xs:annotation>
@@ -256,7 +256,7 @@
         <xs:unique name="DataProviderScheme_UniqueDataProvider">
           <xs:selector xpath="structure:DataProvider"/>
           <xs:field xpath="@id"/>
-        </xs:unique>        
+        </xs:unique>
       </xs:element>
       <xs:element name="OrganisationUnitScheme" type="OrganisationUnitSchemeType">
         <xs:annotation>
@@ -265,7 +265,7 @@
         <xs:unique name="OrganisationUnitScheme_UniqueOrganisationUnit">
           <xs:selector xpath="structure:OrganisationUnit"/>
           <xs:field xpath="@id"/>
-        </xs:unique>        
+        </xs:unique>
       </xs:element>
     </xs:choice>
   </xs:complexType>
@@ -294,7 +294,7 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="CategorySchemesType">
     <xs:annotation>
@@ -355,7 +355,7 @@
         <xs:unique name="HierarchicalCodelist_UniqueHierarchy">
           <xs:selector xpath="structure:Hierarchy"/>
           <xs:field xpath="@id"/>
-        </xs:unique>  
+        </xs:unique>
         <xs:unique name="HierarchicalCodelist_UniqueCodelistAlias">
           <xs:selector xpath="structure:IncludedCodelistReference"/>
           <xs:field xpath="@alias"/>
@@ -363,7 +363,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="ConceptsType">
     <xs:annotation>
       <xs:documentation>ConceptsType describes the structure of the concepts container. It contains one or more stand-alone concept or concept scheme, which can be explicitly detailed or referenced from an external structure document or registry service. This container may contain a mix of both stand-alone concepts and concept schemes.</xs:documentation>
@@ -482,12 +482,12 @@
     <xs:annotation>
       <xs:documentation>ConstraintsType describes the structure of the constraints container. It contains one or more constraint, which can be explicitly detailed or referenced from an external structure document or registry service. This container may contain both attachment and content constraints.</xs:documentation>
     </xs:annotation>
-    <xs:choice maxOccurs="unbounded"> 
+    <xs:choice maxOccurs="unbounded">
       <xs:element name="AttachmentConstraint" type="AttachmentConstraintType">
         <xs:annotation>
           <xs:documentation>AttachmentConstraint describes sub sets of the content of a data or metadata set in terms of the content regions or in terms of the set of key combinations to which attributes or reference metadata (as defined by structure definitions) may be attached.</xs:documentation>
         </xs:annotation>
-      </xs:element> 
+      </xs:element>
       <xs:element name="ContentConstraint" type="ContentConstraintType">
         <xs:annotation>
           <xs:documentation>ContentConstraint specifies a sub set of the definition of the allowable or available content of a data or metadata set in terms of the content or in terms of the set of key combinations.</xs:documentation>
@@ -508,5 +508,5 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
 </xs:schema>

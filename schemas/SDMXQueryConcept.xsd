@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ConceptSchemeWhere" type="ConceptSchemeWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>ConceptSchemeWhere defines the parameters for a concept scheme query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a concept scheme based on the details of its concepts. In any case, the concept scheme will be returned according the indicated return detail.</xs:documentation>
@@ -79,7 +79,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConceptWhereType">
     <xs:annotation>
       <xs:documentation>ConceptWhereType defines a set of parameters for matching a category. All supplied parameters must be matched in order for an object to satisfy the query. In addition to the base parameters for an item, a concept can be queried based on the item scheme that is used as a core representation.</xs:documentation>

@@ -40,30 +40,30 @@
       <xs:field xpath="@id"/>
     </xs:unique>
   </xs:element>
-  
+
   <xs:complexType name="MetadataStructureComponentsBaseType">
     <xs:annotation>
       <xs:documentation>MetadataStructureComponentsBaseType is an abstract base type that forms the basis for the MetadataStructureComponentsType.</xs:documentation>
-    </xs:annotation>      
-    <xs:complexContent> 
+    </xs:annotation>
+    <xs:complexContent>
       <xs:restriction base="GroupingType"/>
-    </xs:complexContent>  
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="MetadataStructureComponentsType">
     <xs:annotation>
       <xs:documentation>MetadataStructureComponentsType describes the structure of the grouping of the sets of the components that make up the metadata structure definition. At a minimum, a full target identifier and at least one report structure must be defined.</xs:documentation>
-    </xs:annotation>    
-    <xs:complexContent> 
+    </xs:annotation>
+    <xs:complexContent>
       <xs:extension base="MetadataStructureComponentsBaseType">
         <xs:sequence>
           <xs:element ref="MetadataTarget" maxOccurs="unbounded"/>
           <xs:element ref="ReportStructure" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
-    </xs:complexContent>  
+    </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="MetadataTarget" type="MetadataTargetType" substitutionGroup="ComponentList">
     <xs:annotation>
       <xs:documentation>MetadataTarget is a collection of target objects which when taken together describe a structure which defines the key of an object type to which metadata may be attached and serve to disambiguate reference metadata set reports.</xs:documentation>
@@ -73,21 +73,21 @@
       <xs:field xpath="@id"/>
     </xs:unique>
   </xs:element>
-  
+
   <xs:complexType name="MetadataTargetBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>MetadataTargetBaseType is an abstract base type which forms the basis for the MetadataTargetType.</xs:documentation>
     </xs:annotation>
-    <xs:complexContent> 
+    <xs:complexContent>
       <xs:restriction base="ComponentListType">
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="id" type="common:IDType" use="required"/>
       </xs:restriction>
-    </xs:complexContent>    
+    </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataTargetType">
     <xs:annotation>
       <xs:documentation></xs:documentation>
@@ -104,7 +104,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TargetObject" abstract="true">
     <xs:annotation>
       <xs:documentation>TargetObject is an abstract base type from which all target objects of a metadata target are derived. It is based on a component. Implementations of this will refined the local representation so that the allowed values accurately reflect the representation of the target object reference.</xs:documentation>
@@ -113,13 +113,13 @@
       <xs:extension base="ComponentType"/>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="KeyDescriptorValuesTarget" type="KeyDescriptorValuesTargetType" substitutionGroup="Component">
     <xs:annotation>
       <xs:documentation>KeyDescriptorValuesTarget is target object which references a data key for the purpose of attach reference metadata to portions of data. A data key is a set of dimension references and values for those dimension. This component on its own is not of much use, as the data key only has local references to the dimensions. Therefore it is typical that this is used in combination with some sort of reference to the data (either a data set reference or a reference to the underlying structure, structure usage, or provision agreement of the data.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="KeyDescriptorValuesTargetType">
     <xs:annotation>
       <xs:documentation>KeyDescriptorValuesTargetType defines the structure of a key descriptor values target object. The key descriptor values target object has a fixed representation and identifier.</xs:documentation>
@@ -134,13 +134,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="DataSetTarget" type="DataSetTargetType" substitutionGroup="Component">
     <xs:annotation>
       <xs:documentation>DataSetTarget is target object which references a data set for the purpose of attaching reference metadata data. A data set reference is a full reference to a data provider and an identifier for the data set.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="DataSetTargetType">
     <xs:annotation>
       <xs:documentation>DataSetTargetType defines the structure of a data set target object. The data set target object has a fixed representation and identifier.</xs:documentation>
@@ -155,13 +155,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ConstraintContentTarget" type="ConstraintContentTargetType" substitutionGroup="Component">
     <xs:annotation>
       <xs:documentation>ConstraintContentTarget is target object which references an attachment constraint for the purpose of attaching reference metadata data to data key sets or cube regions defined by the constraint.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ConstraintContentTargetType">
     <xs:annotation>
       <xs:documentation>ConstraintTargetType defines the structure of a constraint target object. The constraint target object has a fixed representation and identifier.</xs:documentation>
@@ -176,13 +176,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ReportPeriodTarget" type="ReportPeriodTargetType" substitutionGroup="Component">
     <xs:annotation>
       <xs:documentation>ReportPeriodTarget is target object which specifies a reporting period to which a metadata report applies.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ReportPeriodTargetType">
     <xs:annotation>
       <xs:documentation>ReportPeriodTargetType defines the structure of a report period target object. The report period target object has a fixed representation and identifier.</xs:documentation>
@@ -197,13 +197,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="IdentifiableObjectTarget" type="IdentifiableObjectTargetType" substitutionGroup="Component">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectTarget is target object which references an Identifiable object as defined in the SDMX Information Model. The reference must be complete (i.e. a URN or a complete set of reference fields). For an item object, it is possible to define a local representation of an item scheme from which the item must be referenced.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="IdentifiableObjectTargetBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectTargetBaseType is an abstract base type which forms the basis for the IdentifiableObjectTargetType.</xs:documentation>
@@ -212,13 +212,13 @@
       <xs:restriction base="TargetObject">
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
-          <xs:element name="LocalRepresentation" type="IdentifiableObjectRepresentationType"/>        
+          <xs:element name="LocalRepresentation" type="IdentifiableObjectRepresentationType"/>
         </xs:sequence>
         <xs:attribute name="id" type="common:NCNameIDType" use="required"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="IdentifiableObjectTargetType">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectTargetType defines the structure of an identifiable target object. The identifiable target object has a fixed representation of a reference and can specify a local representation of any item scheme for the purpose of restricting which items may be referenced. The identifiable object target must specify the object type which the target object is meant to reference.</xs:documentation>
@@ -229,7 +229,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ReportStructure" type="ReportStructureType" substitutionGroup="ComponentList">
     <xs:annotation>
       <xs:documentation>ReportStructure defines a report structure, which comprises a set of metadata attributes that can be defined as a hierarchy, for reporting reference metadata about a target object. The identification of metadata attributes must be unique at any given level of the report structure. Although there are XML schema constraints to help enforce this, these only apply to explicitly assigned identifiers. Identifiers inherited from a concept from which a metadata attribute takes its identity cannot be validated against this constraint. Therefore, systems processing metadata structure definitions will have to perform this check outside of the XML validation.</xs:documentation>
@@ -239,12 +239,12 @@
       <xs:field xpath="@id"/>
     </xs:unique>
   </xs:element>
-  
+
   <xs:complexType name="ReportStructureBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>ReportStructureBaseType is an abstract base type that serves as the basis for the ReportStructureType.</xs:documentation>
-    </xs:annotation>    
-    <xs:complexContent> 
+    </xs:annotation>
+    <xs:complexContent>
       <xs:restriction base="ComponentListType">
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
@@ -256,12 +256,12 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportStructureType">
     <xs:annotation>
       <xs:documentation>ReportStructureType describes the structure of a report structure. It comprises a set of metadata attributes that can be defined as a hierarchy, and identifies the potential attachment of these attributes to an object by referencing a target identifier.</xs:documentation>
-    </xs:annotation>    
-    <xs:complexContent> 
+    </xs:annotation>
+    <xs:complexContent>
       <xs:extension base="ReportStructureBaseType">
         <xs:sequence>
           <xs:element name="MetadataTarget" type="common:LocalMetadataTargetReferenceType" maxOccurs="unbounded">
@@ -271,7 +271,7 @@
           </xs:element>
         </xs:sequence>
       </xs:extension>
-    </xs:complexContent>    
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:element name="MetadataAttribute" type="MetadataAttributeType" substitutionGroup="Component">
@@ -287,8 +287,8 @@
   <xs:complexType name="MetadataAttributeBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>MetadataAttributeBaseType is an abstract base type the serves as the basis for the MetadataAttributeType.</xs:documentation>
-    </xs:annotation>    
-    <xs:complexContent> 
+    </xs:annotation>
+    <xs:complexContent>
       <xs:restriction base="ComponentType">
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
@@ -296,14 +296,14 @@
           <xs:element name="LocalRepresentation" type="MetadataAttributeRepresentationType" minOccurs="0"/>
         </xs:sequence>
       </xs:restriction>
-    </xs:complexContent>  
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="MetadataAttributeType">
     <xs:annotation>
       <xs:documentation>MetadataAttributeType describes the structure of a metadata attribute. The metadata attribute takes its semantic, and in some cases it representation, from its concept identity. A metadata attribute may be coded (via the local representation), uncoded (via the text format), or take no value. In addition to this value, the metadata attribute may also specify subordinate metadata attributes. If a metadata attribute only serves the purpose of containing subordinate metadata attributes, then the isPresentational attribute should be used. Otherwise, it is assumed to also take a value. If the metadata attribute does take a value, and a representation is not defined, it will be inherited from the concept it takes its semantic from. The optional id on the metadata attribute uniquely identifies it within the metadata structured definition. If this id is not supplied, its value is assumed to be that of the concept referenced from the concept identity. Note that a metadata attribute (as identified by the id attribute) definition  must be unique across the entire metadata structure definition (including target identifier, identifier component, and report structure ids). A metadata attribute may be used in multiple report structures and at different levels, but the content (value and/or child metadata attributes and their cardinality) of the metadata attribute cannot change.</xs:documentation>
-    </xs:annotation>    
-    <xs:complexContent> 
+    </xs:annotation>
+    <xs:complexContent>
       <xs:extension base="MetadataAttributeBaseType">
         <xs:sequence>
           <xs:element ref="MetadataAttribute" minOccurs="0" maxOccurs="unbounded"/>
@@ -324,9 +324,9 @@
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
-    </xs:complexContent>  
+    </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="KeyDescriptorValuesRepresentationType">
     <xs:annotation>
       <xs:documentation>KeyDescriptorValuesRepresentationType defines the possible local representations of a key descriptor values target object. The representation is fixed to always be a data key (KeyValues).</xs:documentation>
@@ -339,7 +339,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataSetRepresentationType">
     <xs:annotation>
       <xs:documentation>DataSetRepresentationType defines the possible local representations of a data set reference target object. The representation is fixed to always be a data set reference.</xs:documentation>
@@ -352,7 +352,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConstraintRepresentationType">
     <xs:annotation>
       <xs:documentation>ConstraintRepresentationType defines the possible local representations of a constraint reference target object. The representation is fixed to always be an attachment constraint reference.</xs:documentation>
@@ -365,7 +365,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportPeriodRepresentationType">
     <xs:annotation>
       <xs:documentation>ReportPeriodRepresentationType defines the possible local representations of a report period target object. The reprentation must be a time period or a subset of this representation.</xs:documentation>
@@ -378,7 +378,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="IdentifiableObjectRepresentationType">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectRepresentationType defines the possible local representations of an identifiable object target object.</xs:documentation>
@@ -398,7 +398,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataAttributeRepresentationType">
     <xs:annotation>
       <xs:documentation>MetadataAttributeRepresentationType defines the possible local representations of a metadata attribute.</xs:documentation>
@@ -439,8 +439,8 @@
         <xs:attribute name="isMultiLingual" type="xs:boolean" use="prohibited"/>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
-  
+  </xs:complexType>
+
   <xs:simpleType name="TargetObjectDataType">
     <xs:annotation>
       <xs:documentation>TargetObjectDataType restricts DataType to specify the allowable data types for representing a target object value.</xs:documentation>
@@ -451,8 +451,8 @@
       <xs:enumeration value="DataSetReference"/>
       <xs:enumeration value="AttachmentConstraintReference"/>
     </xs:restriction>
-  </xs:simpleType>    
-  
+  </xs:simpleType>
+
   <xs:complexType name="KeyDescriptorValuesTextFormatType">
     <xs:annotation>
       <xs:documentation>KeyDescriptorValuesTextFormatType is a restricted version of the NonFacetedTextFormatType that specifies a fixed KeyValues representation.</xs:documentation>
@@ -496,5 +496,5 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

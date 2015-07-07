@@ -3,7 +3,7 @@
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXStructureBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Structure Set Structure Module</xs:appinfo>
     <xs:documentation>The structure set structure module defines the structure of structure set and structure map constructs.</xs:documentation>
@@ -93,7 +93,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ItemSchemeMapType" abstract="true">
     <xs:annotation>
       <xs:documentation>ItemSchemeMapType is an abstract base type which forms the basis for mapping items between item schemes of the same type.</xs:documentation>
@@ -112,19 +112,19 @@
             </xs:annotation>
           </xs:element>
           <xs:sequence maxOccurs="unbounded">
-            <xs:element ref="ItemAssociation"/> 
+            <xs:element ref="ItemAssociation"/>
           </xs:sequence>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-    
+
   <xs:element name="ItemAssociation" type="ItemAssociationType" abstract="true">
     <xs:annotation>
       <xs:documentation>ItemAssociation is an abstract description of the relation between two items for the purpose of mapping.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ItemAssociationType" abstract="true">
     <xs:annotation>
       <xs:documentation>ItemAssociationType is an abstract type which defines the relationship between two items from the source and target item schemes of an item scheme map.</xs:documentation>
@@ -146,7 +146,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="OrganisationSchemeMapType">
     <xs:annotation>
       <xs:documentation>OrganisationSchemeMapType defines the structure of a map which identifies relationships between organisations in different organisation schemes.</xs:documentation>
@@ -166,13 +166,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="OrganisationMap" type="OrganisationMapType" substitutionGroup="ItemAssociation">
     <xs:annotation>
       <xs:documentation>OrganisationMap relates a source organisation to a target organisation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="OrganisationMapType">
     <xs:annotation>
       <xs:documentation>OrganisationMapType defines the structure for mapping two organisations. A local reference is provided both the source and target organisation.</xs:documentation>
@@ -187,7 +187,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="CategorySchemeMapType">
     <xs:annotation>
       <xs:documentation>CategorySchemeMapType defines the structure of a map which identifies relationships between categories in different category schemes.</xs:documentation>
@@ -202,18 +202,18 @@
           <xs:element name="Target" type="common:CategorySchemeReferenceType"/>
           <xs:sequence maxOccurs="unbounded">
             <xs:element ref="CategoryMap"/>
-          </xs:sequence>          
+          </xs:sequence>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="CategoryMap" type="CategoryMapType" substitutionGroup="ItemAssociation">
     <xs:annotation>
       <xs:documentation>CategoryMap defines the structure of a map which identifies relationships between categories in different category schemes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="CategoryMapType">
     <xs:annotation>
       <xs:documentation>CategoryMapType defines the structure for mapping two categories. A local reference is provided both the source and target category.</xs:documentation>
@@ -223,12 +223,12 @@
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
           <xs:element name="Source" type="common:LocalCategoryReferenceType"/>
-          <xs:element name="Target" type="common:LocalCategoryReferenceType"/>          
+          <xs:element name="Target" type="common:LocalCategoryReferenceType"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="CodelistMapType">
     <xs:annotation>
       <xs:documentation>CodelistMapType defines the structure of a map which identifies relationships between codes in different codelists.</xs:documentation>
@@ -243,18 +243,18 @@
           <xs:element name="Target" type="common:CodelistReferenceType"/>
           <xs:sequence maxOccurs="unbounded">
             <xs:element ref="CodeMap"/>
-          </xs:sequence>          
+          </xs:sequence>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="CodeMap" type="CodeMapType" substitutionGroup="ItemAssociation">
     <xs:annotation>
       <xs:documentation>CodeMap defines the structure of a map which identifies relationships between codes in different codelists.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="CodeMapType">
     <xs:annotation>
       <xs:documentation>CodeMapType defines the structure for mapping two codes. A local reference is provided both the source and target code.</xs:documentation>
@@ -264,12 +264,12 @@
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
           <xs:element name="Source" type="common:LocalCodeReferenceType"/>
-          <xs:element name="Target" type="common:LocalCodeReferenceType"/>          
+          <xs:element name="Target" type="common:LocalCodeReferenceType"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConceptSchemeMapType">
     <xs:annotation>
       <xs:documentation>ConceptSchemeMapType defines the structure of a map which identifies relationships between concepts in different concept schemes.</xs:documentation>
@@ -284,18 +284,18 @@
           <xs:element name="Target" type="common:ConceptSchemeReferenceType"/>
           <xs:sequence maxOccurs="unbounded">
             <xs:element ref="ConceptMap"/>
-          </xs:sequence>          
+          </xs:sequence>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ConceptMap" type="ConceptMapType" substitutionGroup="ItemAssociation">
     <xs:annotation>
       <xs:documentation>ConceptMap defines the structure of a map which identifies relationships between concepts in different concept schemes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ConceptMapType">
     <xs:annotation>
       <xs:documentation>ConceptMapType defines the structure for mapping two concepts. A local reference is provided both the source and target concept.</xs:documentation>
@@ -305,12 +305,12 @@
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
           <xs:element name="Source" type="common:LocalConceptReferenceType"/>
-          <xs:element name="Target" type="common:LocalConceptReferenceType"/>         
+          <xs:element name="Target" type="common:LocalConceptReferenceType"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportingTaxonomyMapType">
     <xs:annotation>
       <xs:documentation>ReportingTaxonomyMapType defines the structure of a map which identifies relationships between reporting categories in different reporting taxonomies.</xs:documentation>
@@ -325,18 +325,18 @@
           <xs:element name="Target" type="common:ReportingTaxonomyReferenceType"/>
           <xs:sequence maxOccurs="unbounded">
             <xs:element ref="ReportingCategoryMap"/>
-          </xs:sequence>          
+          </xs:sequence>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ReportingCategoryMap" type="ReportingCategoryMapType" substitutionGroup="ItemAssociation">
     <xs:annotation>
       <xs:documentation>ReportingCategoryMap defines the structure of a map which identifies relationships between reporting categories in different reporting taxonomies.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ReportingCategoryMapType">
     <xs:annotation>
       <xs:documentation>ReportingCategoryMapType defines the structure for mapping two reporting categories. A local reference is provided both the source and target category.</xs:documentation>
@@ -346,12 +346,12 @@
         <xs:sequence>
           <xs:element ref="common:Annotations" minOccurs="0"/>
           <xs:element name="Source" type="common:LocalReportingCategoryReferenceType"/>
-          <xs:element name="Target" type="common:LocalReportingCategoryReferenceType"/>         
+          <xs:element name="Target" type="common:LocalReportingCategoryReferenceType"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HybridCodelistMapBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>HybridCodelistMapBaseType is an abstract base type which forms the basis for the HybridCodelistMapType.</xs:documentation>
@@ -367,7 +367,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HybridCodelistMapType">
     <xs:annotation>
       <xs:documentation>HybridCodelistMapType defines the structure of a map which relates codes (possibly hierarchical) from different code lists.</xs:documentation>
@@ -394,7 +394,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HybridCodeMapType">
     <xs:annotation>
       <xs:documentation>CodeMapType defines the structure for associating a code from a source codelist to a code in a target codelist. Note that either of these may come from a hierarchical codelist.</xs:documentation>
@@ -416,7 +416,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureMapBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>StructureMapBaseType is an abstract base type which forms the basis for the StructureMapType.</xs:documentation>
@@ -432,7 +432,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureMapType">
     <xs:annotation>
       <xs:documentation>StructureMapType defines the structure for mapping components of one structure to components of another structure. A structure may be referenced directly meaning the map applies wherever the structure is used, or it may be a reference via a structure usage meaning the map only applies within the context of that usage. Using the related structures, one can make extrapolations between maps. For example, if key families, A, B, and C, are all grouped in a related structures container, then a map from key family A to C and a map from key family B to C could be used to infer a relation between key family A to C.</xs:documentation>
@@ -464,7 +464,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ComponentMapType">
     <xs:annotation>
       <xs:documentation>ComponentMapType defines the structure for relating a component in a source structure to a component in a target structure.</xs:documentation>
@@ -483,7 +483,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="RepresentationMapType">
     <xs:annotation>
       <xs:documentation>RepresentationMapType describes the structure of the mapping of the value of a source to component to a target component. Either a reference to another map defined within the containing structure set or a description of the source and target text formats must be provided. Note that for key family components, only a reference to a codelist map is relevant, since that is the only type of coded representation allowed in a key family.</xs:documentation>
@@ -513,7 +513,7 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
-  
+
   <xs:complexType name="ValueMapType">
     <xs:annotation>
       <xs:documentation>ValueMapType contains a collection of value mappings, which give a source and target value.</xs:documentation>
@@ -526,7 +526,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="ValueMappingType">
     <xs:annotation>
       <xs:documentation>ValueMappingType specifies the relationship between two values as a source and target.</xs:documentation>
@@ -534,7 +534,7 @@
     <xs:attribute name="source" type="xs:string" use="required"/>
     <xs:attribute name="target" type="xs:string" use="required"/>
   </xs:complexType>
-  
+
   <xs:simpleType name="ToValueTypeType">
     <xs:annotation>
       <xs:documentation>ToValueTypeType provides an enumeration of available text-equivalents for translation of coded values into textual formats.</xs:documentation>
@@ -557,5 +557,5 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

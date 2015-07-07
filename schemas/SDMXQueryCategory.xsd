@@ -8,7 +8,7 @@
     <xs:appinfo>SDMX Category Query Module</xs:appinfo>
     <xs:documentation>The category query module provides the construct of a query for a category scheme.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="CategorySchemeQueryType">
     <xs:annotation>
       <xs:documentation>CategorySchemeQueryType defines the structure of a category scheme query. The parameters for the query are contained in the CategorySchemeWhere element. The References element is used to indicate how objects that reference the matched category scheme should be returned.</xs:documentation>
@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="CategorySchemeWhere" type="CategorySchemeWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>CategorySchemeWhere contains the parameters for a category scheme query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a category scheme based on the details of its categories. In any case, the category scheme will be returned according the indicated return detail.</xs:documentation>
@@ -75,7 +75,7 @@
           <xs:choice minOccurs="0">
             <xs:sequence maxOccurs="unbounded">
               <xs:element ref="CategoryWhere"/>
-            </xs:sequence>            
+            </xs:sequence>
           </xs:choice>
         </xs:sequence>
       </xs:restriction>

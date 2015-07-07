@@ -3,12 +3,12 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:query="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXQueryBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Organisation Query Module</xs:appinfo>
     <xs:documentation>The organisation query module provides the construct of a query for any type of organisation scheme.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="OrganisationSchemeQueryType">
     <xs:annotation>
       <xs:documentation>OrganisationSchemeQueryType defines the structure of an organisation scheme query. The parameters for the query are contained in the OrganisationSchemeWhere element. The References element is used to indicate how objects that reference the matched organisation scheme should be returned.</xs:documentation>
@@ -22,13 +22,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="OrganisationSchemeWhere" type="OrganisationSchemeWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>OrganisationSchemeWhere defines the parameters for an organisation scheme query, regardless of the specific type of organisation scheme being sought. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for an organisation scheme based on the details of its organisations. In any case, the organisation scheme will be returned according the indicated return detail.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="OrganisationSchemeWhereType">
     <xs:annotation>
       <xs:documentation>OrganisationSchemeWhereType contains the parameters of an organisation scheme query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>
@@ -81,7 +81,7 @@
               <xs:annotation>
                 <xs:documentation>Parent is only applicable when searching for organisation units, and is used to match organisations which have a parent organisation unit which is referenced here.</xs:documentation>
               </xs:annotation>
-            </xs:element>           
+            </xs:element>
           </xs:choice>
         </xs:sequence>
       </xs:restriction>
@@ -100,5 +100,5 @@
       <xs:enumeration value="OrganisationUnitScheme"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>
