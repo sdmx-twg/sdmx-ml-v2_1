@@ -35,7 +35,7 @@
 
   <xs:element name="Structure" type="StructureType">
     <xs:annotation>
-      <xs:documentation>Structure is a message that contains structural metadata. It may contain any of the following; categorisations, category schemes, code lists, concepts (concept schemes and stand-alone concepts), constraints (attachment and content) data flows, hierarchical code lists, metadata flows, metadata structure definitions, organisation schemes, processes, reporting taxonomies, and structure sets.</xs:documentation>
+      <xs:documentation>Structure is a message that contains structural metadata. It may contain any of the following; categorisations, category schemes, code lists, concepts (concept schemes), constraints (attachment and content) data flows, hierarchical code lists, metadata flows, metadata structure definitions, organisation schemes, processes, reporting taxonomies, and structure sets.</xs:documentation>
     </xs:annotation>
   </xs:element>
 

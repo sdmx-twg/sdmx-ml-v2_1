@@ -131,7 +131,7 @@
       </xs:element>
       <xs:element name="Concepts" type="ConceptsType" minOccurs="0">
         <xs:annotation>
-          <xs:documentation>Concepts contains a collection of concept descriptions. The concepts described may be both stand-alone concepts and concepts contained within schemes. The concepts may be detailed in full, or referenced from an external structure document or registry service.</xs:documentation>
+          <xs:documentation>Concepts contains a collection of concept descriptions. The concepts described are contained within schemes. The concepts may be detailed in full, or referenced from an external structure document or registry service.</xs:documentation>
         </xs:annotation>
         <xs:unique name="UniqueConceptScheme">
           <xs:selector xpath="structure:ConceptScheme"/>
@@ -366,7 +366,7 @@
 
   <xs:complexType name="ConceptsType">
     <xs:annotation>
-      <xs:documentation>ConceptsType describes the structure of the concepts container. It contains one or more stand-alone concept or concept scheme, which can be explicitly detailed or referenced from an external structure document or registry service. This container may contain a mix of both stand-alone concepts and concept schemes.</xs:documentation>
+      <xs:documentation>ConceptsType describes the structure of the concepts container. It contains one or more stand-alone concept or concept scheme, which can be explicitly detailed or referenced from an external structure document or registry service.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="ConceptScheme" type="ConceptSchemeType" minOccurs="0" maxOccurs="unbounded">
