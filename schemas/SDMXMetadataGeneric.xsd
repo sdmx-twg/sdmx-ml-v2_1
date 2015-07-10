@@ -7,7 +7,7 @@
     <xs:appinfo>SDMX Generic Metadata Namespace Module</xs:appinfo>
     <xs:documentation>The generic metadata namespace module describes a generic format for the reporting of reference metadata, regardless of the underlying metadata structure definition.</xs:documentation>
   </xs:annotation>
-   
+
    <xs:complexType name="MetadataSetType">
       <xs:annotation>
          <xs:documentation>MetadataSetType describes the structure for a metadata set, which contains a collection of reported metadata against a set of values for a given full or partial target identifier, as described in a metadata structure definition. The metadata set may contain reported metadata for multiple report structures defined in a metadata structure definition.</xs:documentation>
@@ -31,8 +31,8 @@
         </xs:extension>
       </xs:complexContent>
    </xs:complexType>
- 
-  
+
+
   <xs:complexType name="ReportType">
     <xs:annotation>
       <xs:documentation>ReportType contains a set of report attributes and identifies a target objects] to which they apply.</xs:documentation>
@@ -54,7 +54,7 @@
               <xs:documentation>AttributeSet contains the reported metadata attribute values for the reported metadata.</xs:documentation>
             </xs:annotation>
           </xs:element>
-        </xs:sequence>  
+        </xs:sequence>
         <xs:attribute name="id" type="common:IDType" use="required">
           <xs:annotation>
             <xs:documentation>The id attribute holds the identifier of the report structure as defined in the metadata structure definition. This identifies the report structure which defines the structure of metadata that is being reported.</xs:documentation>
@@ -63,7 +63,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TargetType">
     <xs:annotation>
       <xs:documentation>TargetType defines the structure of a target. It contains a set of target reference values which when taken together, identify the object or objects to which the reported metadata apply.</xs:documentation>
@@ -81,7 +81,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="ReferenceValueType">
     <xs:annotation>
       <xs:documentation>ReferenceValueType defines the structure of a target object reference value. A target reference value will either be a reference to an identifiable object, a data key, a reference to a data set, or a report period.</xs:documentation>
@@ -119,7 +119,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="AttributeSetType">
     <xs:annotation>
       <xs:documentation>AttributeSetType defines the structure for a collection of reported metadata attributes.</xs:documentation>
@@ -132,7 +132,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportedAttributeType">
     <xs:annotation>
       <xs:documentation>ReportedAttributeType defines the structure for a reported metadata attribute. A value for the attribute can be supplied as either a single value, or multi-lingual text values (either structured or unstructured). An optional set of child metadata attributes is also available if the metadata attribute definition defines nested metadata attributes.</xs:documentation>
@@ -171,5 +171,5 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-    
+
 </xs:schema>

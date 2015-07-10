@@ -26,7 +26,7 @@
           </xs:element>
         </xs:sequence>
       </xs:restriction>
-    </xs:complexContent>    
+    </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

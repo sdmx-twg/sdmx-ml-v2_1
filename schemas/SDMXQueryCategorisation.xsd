@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="CategorisationWhere" type="CategorisationWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>CategorisationWhere defines the parameters for a categorisation query. All parameters must be matched for an object to satisfy the query.In addition to querying based on the basic maintainable properties, it is also possible to search based on the source object being categorized and target category the object is categorized against.</xs:documentation>
@@ -51,7 +51,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="CategorisationWhereType">
     <xs:annotation>
       <xs:documentation>CategorisationWhereType contains a set of parameters for a categorisation query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>
@@ -83,5 +83,5 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

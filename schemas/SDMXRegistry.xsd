@@ -10,5 +10,5 @@
     <xs:appinfo>SDMX Registry Namespace Module</xs:appinfo>
     <xs:documentation>The registry namespace module describes the standard interfaces for interactions with a set of registry services. For convenience, this module has been broken down into sub-modules for the different registry functions.</xs:documentation>
   </xs:annotation>
-  
+
 </xs:schema>

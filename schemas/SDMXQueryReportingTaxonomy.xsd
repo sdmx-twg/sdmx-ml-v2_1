@@ -22,13 +22,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ReportingTaxonomyWhere" type="ReportingTaxonomyWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>ReportingTaxonomyWhere contains the parameters for a reporting taxonomy query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a reporting taxonomy based on the details of its reporting categories. In any case, the reporting taxonomy will be returned according the indicated return detail.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ReportingTaxonomyWhereType">
     <xs:annotation>
       <xs:documentation>ReportingTaxonomyWhereType defines the parameters of a reporting taxonomy query. All supplied parameters must be matched in order for an object to satisfy the query. In addition to querying based on the base maintainable parameters, it is also possible to search for taxonomies that contain particular reporting categories, and on the root level structure definitions of the taxonomy.</xs:documentation>
@@ -60,7 +60,7 @@
       <xs:documentation>ReportingCategoryWhere is used to query for reporting categories matching the parameters supplied. It allows for nested reporting category queries so that hierarchical reporting categories can be queried explicitly by their nested level, although a top level reporting category will always result in a search for reporting categories at any level. This is an implicit set of "and" parameters, meaning all of the conditions must be met in order to return a match.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="ReportingCategoryWhereBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>ReportingCategoryWhereBaseType is an abstract base type that forms the basis for the ReportingCategoryQueryType.</xs:documentation>
@@ -75,7 +75,7 @@
           <xs:choice minOccurs="0">
             <xs:sequence maxOccurs="unbounded">
               <xs:element ref="ReportingCategoryWhere"/>
-            </xs:sequence>            
+            </xs:sequence>
           </xs:choice>
         </xs:sequence>
       </xs:restriction>

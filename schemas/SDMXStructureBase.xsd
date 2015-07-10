@@ -2,12 +2,12 @@
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Base Structure Module</xs:appinfo>
     <xs:documentation>The base structure module contains the descriptions of base structural metadata constructs, such as item schemes, structures, and structure usages, as well as constructs reused by multiple types of structural components.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="IdentifiableType" abstract="true">
     <xs:annotation>
       <xs:documentation>IdentifiableType is an abstract base type for all identifiable objects.</xs:documentation>
@@ -32,7 +32,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="NameableType" abstract="true">
     <xs:annotation>
       <xs:documentation>NameableType is an abstract base type for  all nameable objects.</xs:documentation>
@@ -54,7 +54,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="VersionableType" abstract="true">
     <xs:annotation>
       <xs:documentation>VersionableType is an abstract base type for all versionable objects.</xs:documentation>
@@ -313,7 +313,7 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:complexType name="RepresentationType" abstract="true">
     <xs:annotation>
       <xs:documentation>RepresentationType is an abstract type that defines a representation. Because the type of item schemes that are allowed as the an enumeration vary based on the object in which this is defined, this type is abstract to force that the enumeration reference be restricted to the proper type of item scheme reference.</xs:documentation>
@@ -338,7 +338,7 @@
       </xs:sequence>
     </xs:choice>
   </xs:complexType>
-  
+
   <xs:complexType name="TextFormatType">
     <xs:annotation>
       <xs:documentation>TextFormatType defines the information for describing a full range of text formats and may place restrictions on the values of the other attributes, referred to as "facets".</xs:documentation>
@@ -466,7 +466,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="CodeDataType">
     <xs:annotation>
       <xs:documentation>CodeDataType is a restriction of the basic data types that are applicable to codes. Although some of the higher level time period formats are perimitted, it should be noted that any value which contains time (which includes a time zone offset) is not allowable as a code identifier.</xs:documentation>
@@ -531,7 +531,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TimeTextFormatType">
     <xs:annotation>
       <xs:documentation>TimeTextFormat is a restricted version of the SimpleComponentTextFormatType that only allows time based format and specifies a default ObservationalTimePeriod representation and facets of a start and end time.</xs:documentation>

@@ -27,5 +27,5 @@
     <xs:appinfo>SDMX Query Namespace Module</xs:appinfo>
     <xs:documentation>The query namespace module describes the structure of the generic query message for use in web service environments. It contains constructs for querying for data, reference metadata, and structural metadata. For convenience, this module has been broken down into sub-modules for the different types of queries.</xs:documentation>
   </xs:annotation>
-  
+
 </xs:schema>

@@ -3,7 +3,7 @@
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXStructureBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Categorisation Structure Module</xs:appinfo>
     <xs:documentation>The categorisation structure module defines the structure categorisation constructs.</xs:documentation>

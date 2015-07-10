@@ -3,7 +3,7 @@
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXStructureBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Code List Structure Module</xs:appinfo>
     <xs:documentation>The code list structure module defines the structure of code list and code constructs.</xs:documentation>
@@ -30,14 +30,14 @@
         </xs:attribute>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
-    
+  </xs:complexType>
+
   <xs:element name="Code" type="CodeType" substitutionGroup="Item">
     <xs:annotation>
       <xs:documentation>Code describes a code in a codelist. In addition to the identification and description of the code, basic presentational information is also available. Presentational information not present may be added through the use of annotations.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="CodeType">
     <xs:annotation>
       <xs:documentation>CodeType describes the structure of a code. A code is defined as a language independent set of letters, numbers or symbols that represent a concept whose meaning is described in a natural language. Presentational information not present may be added through the use of annotations.</xs:documentation>

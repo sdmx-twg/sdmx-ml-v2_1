@@ -8,7 +8,7 @@
     <xs:appinfo>SDMX Metadata Flow Query Module</xs:appinfo>
     <xs:documentation>The metadata flow query module provides the construct of a query for a metadata flow.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="MetadataflowQueryType">
     <xs:annotation>
       <xs:documentation>MetadataflowQueryType defines the structure of a metadataflow query. The parameters for the query are contained in the MetadataflowWhere element. The References element is used to indicate how objects that reference or are referenced from the matched metadataflow should be returned.</xs:documentation>
@@ -22,13 +22,13 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="MetadataflowWhere" type="MetadataflowWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>MetadataflowWhere contains the parameters for a metadataflow query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a metadataflow based on the metadata structure definition it defines the usage of.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:complexType name="MetadataflowWhereType">
     <xs:annotation>
       <xs:documentation>MetadataflowWhereType contains the parameters of a metadataflow query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>

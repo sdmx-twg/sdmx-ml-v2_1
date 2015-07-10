@@ -3,12 +3,12 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:query="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:include schemaLocation="SDMXQueryBase.xsd"/>
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Metadata Query Module</xs:appinfo>
     <xs:documentation>The metadata query module provides the construct of a query for metadata.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="MetadataQueryType">
     <xs:annotation>
       <xs:documentation>MetadataQueryType defines the structure of a reference metadata query. Reference metadata is queried as individual reports. The result of this query will be a collection of metadata sets, with only the relevant metadata reports contained within them. If no report level parameters are specified, then the query will result in entire metadata sets being returned.</xs:documentation>
@@ -24,9 +24,9 @@
           <xs:documentation>MetadataParameters contains the parameters that are to be matched in order to determine which metadata reports are to be returned as the result of the query.</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:sequence>  
+    </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataReturnDetailsType">
     <xs:annotation>
       <xs:documentation>MetadataReturnDetailsType is a structure for detailing how reference metadata should be returned. Only a default size limit can be specified.</xs:documentation>
@@ -35,7 +35,7 @@
       <xs:extension base="ReturnDetailsBaseType"/>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataParametersType" abstract="true">
     <xs:annotation>
       <xs:documentation>MetadataParametersType defines the parameters for querying for reference metadata. This structure is refined by separate And/Or constructs which make logical restrictions on which parameters apply in such cases.</xs:documentation>
@@ -133,7 +133,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataParametersOrType">
     <xs:annotation>
       <xs:documentation>MetadataParametersOrType refines the base data parameters to define a set of parameters joined by an "or" condition. Only one of the parameters supplied in an instance of this type can be satisfied to result in a match.</xs:documentation>
@@ -158,11 +158,11 @@
           <xs:element name="AttachedDataSet" type="common:SetReferenceType" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="AttachedReportingPeriod" type="common:TimeRangeValueType" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="And" type="MetadataParametersAndType" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>        
+        </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataParametersAndType">
     <xs:annotation>
       <xs:documentation>MetadataParametersAndType refines the base data parameters to define a set of parameters joined by an "and" conditions. All of the parameters supplied in an instance of this type must be satisfied to result in a match. As a result of this condition, the maximum occurrence of some parameters has been reduced so as to not allow for impossible conditions to be specified (for example data cannot be matched is it is specified that the data set identifier should be "xyz" and the data identifier should be "abc".</xs:documentation>
@@ -186,8 +186,8 @@
           <xs:element name="AttachedDataKey" type="common:DataKeyType" minOccurs="0"/>
           <xs:element name="AttachedDataSet" type="common:SetReferenceType" minOccurs="0"/>
           <xs:element name="AttachedReportingPeriod" type="common:TimeRangeValueType" minOccurs="0"/>
-          <xs:element name="Or" type="MetadataParametersOrType" minOccurs="0" maxOccurs="unbounded"/>         
-        </xs:sequence>        
+          <xs:element name="Or" type="MetadataParametersOrType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -205,7 +205,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="TargetObjectValueType">
     <xs:annotation>
       <xs:documentation>IdentifierComponentValueType describes the structure that is used to match reference metadata where a given identifier component has a particular value.</xs:documentation>
@@ -240,7 +240,7 @@
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportStructureValueType">
     <xs:annotation>
       <xs:documentation>ReportStructureValueType describes the structure that is used to match reference metadata where the metadata attributes of a report structure have particular values. All metadata attribute value conditions must be met to constitute a match.</xs:documentation>

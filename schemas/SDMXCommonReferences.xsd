@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Common References Module</xs:appinfo>
     <xs:documentation>The common references module contains common constructs that are used to reference objects.</xs:documentation>
   </xs:annotation>
 
   <!-- Identification and Reference Field Types -->
-  
+
   <xs:simpleType name="NestedIDType">
     <xs:annotation>
       <xs:documentation>NestedIDType is the least restrictive form of an identifier used throughout all SDMX-ML messages. It allows for a hierarchical identifier, with each portion separated by the '.' character. For the identifier portions, valid characters include A-Z, a-z, @, 0-9, _, -, $.</xs:documentation>
@@ -61,8 +61,8 @@
     <xs:restriction base="NestedNCNameIDType">
       <xs:pattern value="[A-z][A-z0-9_\-]*"/>
     </xs:restriction>
-  </xs:simpleType>  
-  
+  </xs:simpleType>
+
   <xs:simpleType name="VersionType">
     <xs:annotation>
       <xs:documentation>VersionType is used to communicate version information. The format is restricted to allow for simple incrementing and sorting of version number. The version consists of an unlimited set of numeric components, separated by the '.' character. When processing version, each numeric component (the number preceding and following any '.' character) should be parsed as an integer. Thus, a version of 1.3 and 1.03 would be equivalent, as both the '3' component and the '03' component would parse to an integer value of 3.</xs:documentation>
@@ -123,7 +123,7 @@
         </xs:annotation>
       </xs:element>
     </xs:choice>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="RefBaseType" abstract="true">
     <xs:annotation>
@@ -175,7 +175,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="ObjectReferenceType">
     <xs:annotation>
       <xs:documentation>ObjectReferenceType is a generic reference which allows for any object to be referenced. The type of object actually referenced can be determined from the URN or from the class attribute of the full set of reference fields.</xs:documentation>
@@ -188,11 +188,11 @@
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
-        </xs:choice>        
+        </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ObjectRefType">
     <xs:annotation>
       <xs:documentation>ObjectRefType contains a set of reference fields for the purpose of referencing any object. This cannot be a local reference, therefore the agency identifier is required. It is also required that the class and package be supplied for the referenced object such that a complete URN reference can be built from the values provided. Note that this is not capable of fully validating that all necessary fields are supplied for a given object type.</xs:documentation>
@@ -206,7 +206,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MaintainableRefBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>MaintainableRefBaseType is an abstract base type for referencing a maintainable object.</xs:documentation>
@@ -225,7 +225,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MaintainableRefType">
     <xs:annotation>
       <xs:documentation>MaintainableRefType contains a complete set of reference fields for referencing any maintainable object.</xs:documentation>
@@ -253,7 +253,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ItemSchemeRefType">
     <xs:annotation>
       <xs:documentation>ItemSchemeRefType contains a complete set of reference fields for referencing any item scheme. The class and package a required so that the reference is explicit as to the exact object being referenced.</xs:documentation>
@@ -277,7 +277,7 @@
         <xs:attribute name="version" type="VersionType" use="optional" default="1.0"/>
         <xs:attribute name="local" type="xs:boolean" use="optional" fixed="false"/>
         <xs:attribute name="class" type="StructureOrUsageTypeCodelistType" use="optional"/>
-        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional"/>       
+        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -293,7 +293,7 @@
         <xs:attribute name="version" type="VersionType" use="optional" default="1.0"/>
         <xs:attribute name="local" type="xs:boolean" use="optional" fixed="false"/>
         <xs:attribute name="class" type="StructureTypeCodelistType" use="optional"/>
-        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional"/>       
+        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -305,11 +305,11 @@
     <xs:complexContent>
       <xs:restriction base="StructureRefBaseType">
         <xs:attribute name="class" type="StructureTypeCodelistType" use="required"/>
-        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="required"/>       
+        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="required"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureUsageRefBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>StructureUsageRefBaseType is an abstract base type for referencing a structure usage.</xs:documentation>
@@ -321,7 +321,7 @@
         <xs:attribute name="version" type="VersionType" use="optional" default="1.0"/>
         <xs:attribute name="local" type="xs:boolean" use="optional" fixed="false"/>
         <xs:attribute name="class" type="StructureUsageTypeCodelistType" use="optional"/>
-        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional"/>       
+        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -333,7 +333,7 @@
     <xs:complexContent>
       <xs:restriction base="StructureUsageRefBaseType">
         <xs:attribute name="class" type="StructureUsageTypeCodelistType" use="required"/>
-        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="required"/>       
+        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="required"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -474,7 +474,7 @@
     <xs:complexContent>
       <xs:restriction base="StructureOrUsageRefBaseType">
         <xs:attribute name="class" type="StructureOrUsageTypeCodelistType" use="required"/>
-        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="required"/>       
+        <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="required"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -497,7 +497,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalItemRefBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>LocalItemRefBaseType is an abstract base type which provides a local reference to a item object.</xs:documentation>
@@ -524,7 +524,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalComponentListComponentRefBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>LocalComponentRefBaseType is an abstract base type which provides a local reference to a component object.</xs:documentation>
@@ -550,7 +550,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalComponentRefBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>LocalComponentRefBaseType is an abstract base type which provides a local reference to a component object.</xs:documentation>
@@ -561,7 +561,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalComponentRefType">
     <xs:annotation>
       <xs:documentation>LocalComponentRefType provides a local reference to any type component object.</xs:documentation>
@@ -595,7 +595,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <!-- Specific Reference Types -->
 
   <xs:complexType name="URNReferenceType">
@@ -644,7 +644,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalIdentifiableReferenceType" abstract="true">
     <xs:annotation>
       <xs:documentation>LocalIdentifiableReferenceType is an abstract base type for referencing an identifiable object locally, where the maintainable object in which it is defined is referenced in another context..</xs:documentation>
@@ -657,7 +657,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureReferenceBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>StructureReferneceBaseType is a specific type of MaintainableReference that is used for referencing structure definitions. It consists of a URN and/or a complete set of reference fields; agency, id, and version.</xs:documentation>
@@ -691,7 +691,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureUsageReferenceBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>StructureUsageReferenceBaseType is a specific type of MaintainableReference that is used for referencing structure usages. It consists of a URN and/or a complete set of reference fields; agency, id, and version.</xs:documentation>
@@ -725,7 +725,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ItemSchemeReferenceBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>ItemSchemeReferenceBaseType is a specific type of MaintainableReference that is used for referencing item schemes. It consists of a URN and/or a complete set of reference fields; agency, id, and version.</xs:documentation>
@@ -759,7 +759,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ChildObjectReferenceType" abstract="true">
     <xs:annotation>
       <xs:documentation>ChildObjectReferenceType is an abstract base type used for referencing a particular object defined directly within a maintainable object. It consists of a URN and/or a complete set of reference fields; agency, maintainable id (maintainableParentID), maintainable version (maintainableParentVersion), the object id (which can be nested), and optionally the object version (if applicable).</xs:documentation>
@@ -857,7 +857,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalComponentListReferenceType" abstract="true">
     <xs:annotation>
       <xs:documentation>LocalComponentListReferenceType is an abstract base type which provides a simple reference to a component list where the reference to the structure which defines it is provided in another context.</xs:documentation>
@@ -883,7 +883,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalComponentListComponentReferenceType">
     <xs:annotation>
       <xs:documentation>LocalComponentListComponentReferenceType provides a simple reference to any type of component in a specific component list where the reference to the structure which defines it are provided in another context.</xs:documentation>
@@ -940,7 +940,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <!-- Specific Object Reference Types -->  
+  <!-- Specific Object Reference Types -->
 
   <xs:complexType name="CategorisationReferenceType">
     <xs:annotation>
@@ -1011,7 +1011,7 @@
             <xs:element name="Ref" type="CategoryRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -1104,7 +1104,7 @@
             <xs:element name="Ref" type="CodeRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -1175,7 +1175,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="AnyLocalCodeReferenceType">
     <xs:annotation>
       <xs:documentation>AnyLocalCodeReferenceType provides a simple references to any code or hierarchical code where the identification of the codelist or hierarchical codelist which defines it is contained in another context.</xs:documentation>
@@ -1192,7 +1192,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConceptSchemeReferenceType">
     <xs:annotation>
         <xs:documentation>ConceptSchemeReferenceType is a type for referencing a concept scheme object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -1233,7 +1233,7 @@
             <xs:element name="Ref" type="ConceptRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -1303,7 +1303,7 @@
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="OrganisationSchemeRefBaseType" abstract="true">
     <xs:annotation>
@@ -1316,7 +1316,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="OrganisationSchemeReferenceType">
     <xs:annotation>
       <xs:documentation>OrganisationSchemeReferenceType references an organisation scheme regardless of the specific type. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -1384,7 +1384,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="OrganisationReferenceType">
     <xs:annotation>
       <xs:documentation>OrganisationReferenceType references an organisation regardless of the specific type. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -1501,7 +1501,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="OrganisationUnitRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -1581,7 +1581,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="AgencyRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -1622,7 +1622,7 @@
         <xs:attribute name="class" type="OrganisationTypeCodelistType" use="optional" fixed="Agency"/>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="DataConsumerSchemeReferenceType">
     <xs:annotation>
@@ -1661,7 +1661,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="DataConsumerRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -1741,7 +1741,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="DataProviderRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -1892,7 +1892,7 @@
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="HierarchicalCodelistRefType">
     <xs:annotation>
@@ -1905,7 +1905,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HierarchyReferenceType">
     <xs:annotation>
       <xs:documentation>HierarchyReferenceType is a type for referencing a hierarchy within a hierarchical codelist.</xs:documentation>
@@ -1922,7 +1922,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HierarchyRefType">
     <xs:annotation>
       <xs:documentation>HierarchyRefType is type which references a hierarchy from within a hierarchical codelist. Reference fields are required for both the hierarchy and the codelist.</xs:documentation>
@@ -1965,7 +1965,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalLevelReferenceType">
     <xs:annotation>
       <xs:documentation>LocalLevelReferenceType is a type for referencing a level object where the reference to the hierarchical codelist and the hierarchy in which it is defined is provided in another context (e.g. is inferred from the hierarchy in which the reference is defined).</xs:documentation>
@@ -1978,7 +1978,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalLevelRefType">
     <xs:annotation>
       <xs:documentation>LocalLevelRefType references a level object where the reference to the hierarchy in which it is contained and the hierarchical codelist which define it are provided in another context.</xs:documentation>
@@ -2033,7 +2033,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConstraintReferenceType">
     <xs:annotation>
       <xs:documentation>ConstraintReferenceType is a type for referencing a constraint object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2217,7 +2217,7 @@
             <xs:element name="Ref" type="KeyDescriptorRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2235,7 +2235,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="AttributeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>AttributeDescriptorReferenceType is a type for referencing an attribute descriptor object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2247,7 +2247,7 @@
             <xs:element name="Ref" type="AttributeDescriptorRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2265,7 +2265,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MeasureDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>MeasureDescriptorReferenceType is a type for referencing a measure descriptor object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2277,7 +2277,7 @@
             <xs:element name="Ref" type="MeasureDescriptorRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2307,7 +2307,7 @@
             <xs:element name="Ref" type="GroupKeyDescriptorRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2362,7 +2362,7 @@
             <xs:element name="Ref" type="DimensionRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2393,7 +2393,7 @@
             <xs:element name="Ref" type="MeasureDimensionRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2424,7 +2424,7 @@
             <xs:element name="Ref" type="TimeDimensionRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2485,7 +2485,7 @@
             <xs:element name="Ref" type="AttributeRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2504,7 +2504,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="PrimaryMeasureReferenceType">
     <xs:annotation>
       <xs:documentation>PrimaryMeasureReferenceType is a type for referencing a primary measure object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2516,7 +2516,7 @@
             <xs:element name="Ref" type="PrimaryMeasureRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2562,7 +2562,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  
+
   <xs:complexType name="LocalDataStructureComponentReferenceType">
     <xs:annotation>
       <xs:documentation>LocalDataStructureComponentReferenceType is a type for referencing any type of data structure component locally, where the reference for the data structure definition which defines the components is available in another context.</xs:documentation>
@@ -2575,7 +2575,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalDataStructureComponentRefType">
     <xs:annotation>
       <xs:documentation>LocalDataStructureComponentRefType contains the reference fields for referencing any data structure component locally. This reference must specify the class of the component being referenced.</xs:documentation>
@@ -2589,7 +2589,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataStructureEnumerationSchemeReferenceType">
     <xs:annotation>
       <xs:documentation>DataStructureEnumerationSchemeReferenceType is a type for referencing any type of item scheme that is allowable as the enumeration of the representation of a data structure definition component. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2601,12 +2601,12 @@
             <xs:element name="Ref" type="DataStructureEnumerationSchemeRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataStructureEnumerationSchemeRefType">
     <xs:annotation>
       <xs:documentation>DataStructureEnumerationSchemeRefType contains the reference fields for referencing any item scheme that is allowable as the enumeration of the representation of a data structure definition component.</xs:documentation>
@@ -2618,7 +2618,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataStructureReferenceType">
     <xs:annotation>
       <xs:documentation>MetadataStructureReferenceType is a type for referencing a metadata structure definition object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2659,7 +2659,7 @@
             <xs:element name="Ref" type="MetadataTargetRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
@@ -2702,7 +2702,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConstraintTargetReferenceType">
     <xs:annotation>
       <xs:documentation>ConstraintTargetReferenceType is a type for referencing a constraint target object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2714,12 +2714,12 @@
             <xs:element name="Ref" type="ConstraintTargetRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
-        </xs:choice>        
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
+        </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConstraintTargetRefType">
     <xs:annotation>
       <xs:documentation>ConstraintTargetRefType contains a reference to a constraint target within a metadata target of a data structure definition.</xs:documentation>
@@ -2733,7 +2733,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataSetTargetReferenceType">
     <xs:annotation>
       <xs:documentation>DataSetTargetReferenceType is a type for referencing a data set target object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2745,12 +2745,12 @@
             <xs:element name="Ref" type="DataSetTargetRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
-        </xs:choice>        
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
+        </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataSetTargetRefType">
     <xs:annotation>
       <xs:documentation>DataSetTargetRefType contains a reference to a data set target within a metadata target of a data structure definition.</xs:documentation>
@@ -2764,7 +2764,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="KeyDescriptorValuesTargetReferenceType">
     <xs:annotation>
       <xs:documentation>KeyDescriptorValuesTargetType is a type for referencing a key descriptor values target object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2776,12 +2776,12 @@
             <xs:element name="Ref" type="KeyDescriptorValuesTargetRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
-        </xs:choice>        
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
+        </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="KeyDescriptorValuesTargetRefType">
     <xs:annotation>
       <xs:documentation>KeyDescriptorValuesTargetRefType contains a reference to a key descriptor values target within a metadata target of a data structure definition.</xs:documentation>
@@ -2795,7 +2795,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportPeriodTargetReferenceType">
     <xs:annotation>
       <xs:documentation>ReportPeriodTargetReferenceType is a type for referencing a report period target object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2807,12 +2807,12 @@
             <xs:element name="Ref" type="ReportPeriodTargetRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
-        </xs:choice>        
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
+        </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportPeriodTargetRefType">
     <xs:annotation>
       <xs:documentation>ReportPeriodTargetRefType contains a reference to a report period target within a metadata target of a data structure definition.</xs:documentation>
@@ -2826,7 +2826,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="IdentifiableObjectTargetReferenceType">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectTargetReferenceType is a type for referencing an identifiable object target object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2838,12 +2838,12 @@
             <xs:element name="Ref" type="IdentifiableObjectTargetRefType" form="unqualified"/>
             <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
-          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>          
-        </xs:choice>        
+          <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
+        </xs:choice>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="IdentifiableObjectTargetRefType">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectTargetRefType contains a reference to an identifiable object target within a metadata target of a data structure definition.</xs:documentation>
@@ -2881,7 +2881,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportStructureReferenceType">
     <xs:annotation>
       <xs:documentation>ReportStructureReferenceType is a type for referencing a report structure object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2909,7 +2909,7 @@
         <xs:attribute name="class" type="ComponentListTypeCodelistType" use="optional" fixed="ReportStructure"/>
         <xs:attribute name="package" type="StructurePackageTypeCodelistType" use="optional" fixed="metadatastructure"/>
       </xs:restriction>
-    </xs:complexContent>  
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="LocalReportStructureReferenceType">
@@ -2936,7 +2936,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataAttributeReferenceType">
     <xs:annotation>
       <xs:documentation>MetadataAttributeReferenceType is a type for referencing a metadata attribute object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -2967,7 +2967,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalMetadataStructureComponentReferenceType">
     <xs:annotation>
       <xs:documentation>LocalMetadataStructureComponentReferenceType is a type for referencing any type of metadata structure component locally, where the reference for the metadata structure definition which defines the components is available in another context.</xs:documentation>
@@ -2980,7 +2980,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalMetadataStructureComponentRefType">
     <xs:annotation>
       <xs:documentation>LocalMetadataStructureComponentRefType contains the reference fields for referencing any metadata structure component locally. This reference must specify the class of the component being referenced.</xs:documentation>
@@ -2993,7 +2993,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ProvisionAgreementReferenceType">
     <xs:annotation>
       <xs:documentation>ProvisionAgreementReferenceType is a type for referencing a provision agreement. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -3009,7 +3009,7 @@
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType>   
+  </xs:complexType>
 
   <xs:complexType name="ProvisionAgreementRefType">
     <xs:annotation>
@@ -3076,11 +3076,11 @@
     <xs:complexContent>
       <xs:restriction base="ChildObjectRefBaseType">
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="ProcessStep"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="process"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="process"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalProcessStepReferenceType">
     <xs:annotation>
       <xs:documentation>LocalProcessStepReferenceType is a type for referencing a process step locally, where the reference to the process which defines it is provided in another context (for example the metadata structure definition in which the reference occurs).</xs:documentation>
@@ -3093,7 +3093,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LocalProcessStepRefType">
     <xs:annotation>
       <xs:documentation>LocalProcessStepRefType contains a local reference to a process step object.</xs:documentation>
@@ -3101,11 +3101,11 @@
     <xs:complexContent>
       <xs:restriction base="LocalIdentifiableRefBaseType">
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="ProcessStep"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="process"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="process"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TransitionReferenceType">
     <xs:annotation>
       <xs:documentation>TransiationReferenceType is a type for referencing a process step object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -3120,7 +3120,7 @@
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
       </xs:restriction>
-    </xs:complexContent>    
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="TransitionRefType">
@@ -3135,7 +3135,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureSetReferenceType">
     <xs:annotation>
       <xs:documentation>StructureSetReferenceType is a type for referencing a structure set object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -3151,7 +3151,7 @@
         </xs:choice>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="StructureSetRefType">
     <xs:annotation>
@@ -3174,7 +3174,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="StructureMapRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -3190,7 +3190,7 @@
       <xs:restriction base="ChildObjectRefBaseType">
         <xs:attribute name="id" type="IDType" use="required"/>
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="StructureMap"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -3204,7 +3204,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="CategorySchemeMapRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -3220,10 +3220,10 @@
       <xs:restriction base="ChildObjectRefBaseType">
         <xs:attribute name="id" type="IDType" use="required"/>
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="CategorySchemeMap"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="CodelistMapReferenceType">
     <xs:annotation>
@@ -3234,7 +3234,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="CodelistMapRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -3250,11 +3250,11 @@
       <xs:restriction base="ChildObjectRefBaseType">
         <xs:attribute name="id" type="IDType" use="required"/>
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="CodelistMap"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
-  
+  </xs:complexType>
+
   <xs:complexType name="LocalCodelistMapReferenceType">
     <xs:annotation>
       <xs:documentation>LocalCodelistMapReferenceType is a type for referencing a codelist map object where the reference to the structure set which defines it is provided in another context (e.g. the structure set in which this reference occurs).</xs:documentation>
@@ -3276,11 +3276,11 @@
       <xs:restriction base="LocalIdentifiableRefBaseType">
         <xs:attribute name="containerID" type="NestedIDType" use="prohibited"/>
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="CodelistMap"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
-  
+  </xs:complexType>
+
   <xs:complexType name="ConceptSchemeMapReferenceType">
     <xs:annotation>
       <xs:documentation>ConceptSchemeMapReferenceType is a type for referencing a concept scheme map object. It consists of a URN and/or a complete set of reference fields.</xs:documentation>
@@ -3290,7 +3290,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="ConceptSchemeMapRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -3306,10 +3306,10 @@
       <xs:restriction base="ChildObjectRefBaseType">
         <xs:attribute name="id" type="IDType" use="required"/>
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="ConceptSchemeMap"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="OrganisationSchemeMapReferenceType">
     <xs:annotation>
@@ -3320,7 +3320,7 @@
         <xs:choice>
           <xs:sequence>
             <xs:element name="Ref" type="OrganisationSchemeMapRefType" form="unqualified"/>
-            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>            
+            <xs:element name="URN" type="xs:anyURI" form="unqualified" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="URN" type="xs:anyURI" form="unqualified"/>
         </xs:choice>
@@ -3336,13 +3336,13 @@
       <xs:restriction base="ChildObjectRefBaseType">
         <xs:attribute name="id" type="IDType" use="required"/>
         <xs:attribute name="class" type="ObjectTypeCodelistType" use="optional" fixed="OrganisationSchemeMap"/>
-        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>          
+        <xs:attribute name="package" type="PackageTypeCodelistType" use="optional" fixed="mapping"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <!-- Data/Metadata Set References -->
-  
+
   <xs:complexType name="SetReferenceType">
     <xs:annotation>
       <xs:documentation>SetReferenceType defines the structure of a reference to a data/metadata set. A full reference to a data provider and the identifier for the data set must be provided. Note that this is not derived from the base reference structure since data/metadata sets are not technically identifiable.</xs:documentation>
@@ -3360,7 +3360,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <!--Object Type List-->
 
   <xs:simpleType name="PackageTypeCodelistType">
@@ -3477,7 +3477,7 @@
       <xs:enumeration value="Transition"/>
     </xs:restriction>
   </xs:simpleType>
-
+
   <xs:simpleType name="MaintainableTypeCodelistType">
     <xs:annotation>
       <xs:documentation>MaintainableTypeCodelistType provides an enumeration of all maintainable objects.</xs:documentation>
@@ -3554,7 +3554,7 @@
       <xs:enumeration value="HierarchicalCode"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:simpleType name="ConstraintTypeCodelistType">
     <xs:annotation>
       <xs:documentation>ConstraintTypeCodelistType provides an enumeration of all constraint objects.</xs:documentation>
@@ -3579,7 +3579,7 @@
       <xs:enumeration value="OrganisationUnitScheme"/>
       <xs:enumeration value="ReportingTaxonomy"/>
     </xs:restriction>
-  </xs:simpleType>  
+  </xs:simpleType>
 
   <xs:simpleType name="OrganisationSchemeTypeCodelistType">
     <xs:annotation>
@@ -3724,7 +3724,7 @@
       <xs:enumeration value="ReportPeriodTarget"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:simpleType name="DimensionTypeCodelistType">
     <xs:annotation>
       <xs:documentation>DimensionTypeCodelistType provides an enumeration of all dimension objects.</xs:documentation>
@@ -3748,7 +3748,7 @@
       <xs:enumeration value="ReportPeriodTarget"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:element name="Any" type="EmptyType">
     <xs:annotation>
       <xs:documentation>Any is an empty element that denotes an object of any type.</xs:documentation>
@@ -3796,7 +3796,7 @@
       <xs:documentation>Category is an empty element that denotes a category object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="CategorySchemeMap" type="EmptyType">
     <xs:annotation>
       <xs:documentation>CategorySchemeMap is an empty element that denotes a category scheme map object.</xs:documentation>
@@ -3826,13 +3826,13 @@
       <xs:documentation>Codelist is an empty element that denotes a code list object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="CodelistMap" type="EmptyType">
     <xs:annotation>
       <xs:documentation>CodelistMap is an empty element that denotes a code list map object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ComponentMap" type="EmptyType">
     <xs:annotation>
       <xs:documentation>ComponentMap is an empty element that denotes a component map object.</xs:documentation>
@@ -3850,7 +3850,7 @@
       <xs:documentation>ConceptMap is an empty element that denotes a concept map object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ConceptScheme" type="EmptyType">
     <xs:annotation>
       <xs:documentation>ConceptScheme is an empty element that denotes a concept scheme object.</xs:documentation>
@@ -3868,7 +3868,7 @@
       <xs:documentation>ConstraintTarget is an empty element that denotes a constraint target object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ContentConstraint" type="EmptyType">
     <xs:annotation>
       <xs:documentation>ContentConstraint is an empty element that denotes a content constraint object.</xs:documentation>
@@ -3934,7 +3934,7 @@
       <xs:documentation>DimensionDescriptorValuesTarget is an empty element that denotes a dimension descriptor values target object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="GroupDimensionDescriptor" type="EmptyType">
     <xs:annotation>
       <xs:documentation>GroupDimensionDescriptor is an empty element that denotes a group dimension descriptor object.</xs:documentation>
@@ -3958,7 +3958,7 @@
       <xs:documentation>Hierarchy is an empty element that denotes a hierarchy within a hiearcharchical codelist.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="HybridCodelistMap" type="EmptyType">
     <xs:annotation>
       <xs:documentation>HybridCodelistMap is an empty element that denotes a hybrid codelist map object.</xs:documentation>
@@ -3970,7 +3970,7 @@
       <xs:documentation>HybridCodeMap is an empty element that denotes a hybrid code map object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="IdentifiableObjectTarget" type="EmptyType">
     <xs:annotation>
       <xs:documentation>IdentifiableObjectTarget is an empty element that denotes an identifiable object target object.</xs:documentation>
@@ -3982,7 +3982,7 @@
       <xs:documentation>Level is an empty element that denotes a level object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="MeasureDescriptor" type="EmptyType">
     <xs:annotation>
       <xs:documentation>MeasureDescriptor is an empty element that denotes a measure descriptor object.</xs:documentation>
@@ -4030,7 +4030,7 @@
       <xs:documentation>OrganisationMap is an empty element that denotes an organisation map object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="OrganisationSchemeMap" type="EmptyType">
     <xs:annotation>
       <xs:documentation>OrganisationSchemeMap is an empty element that denotes an organisation scheme map object.</xs:documentation>
@@ -4084,7 +4084,7 @@
       <xs:documentation>ReportingCategoryMap is an empty element that denotes a reporting category map object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ReportingTaxonomy" type="EmptyType">
     <xs:annotation>
       <xs:documentation>ReportingTaxonomy is an empty element that denotes a reporting taxonomy object.</xs:documentation>
@@ -4096,13 +4096,13 @@
       <xs:documentation>ReportingTaxonomyMap is an empty element that denotes a reporting taxonomy map object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ReportPeriodTarget" type="EmptyType">
     <xs:annotation>
       <xs:documentation>ReportPeriodTarget is an empty element that denotes a report period target object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ReportStructure" type="EmptyType">
     <xs:annotation>
       <xs:documentation>ReportStructure is an empty element that denotes a report structure object.</xs:documentation>
@@ -4120,13 +4120,13 @@
       <xs:documentation>StructureSet is an empty element that denotes a structure set object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="TimeDimension" type="EmptyType">
     <xs:annotation>
       <xs:documentation>TimeDimension is an empty element that denotes a time dimension object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-
+
   <xs:element name="Transition" type="EmptyType">
     <xs:annotation>
       <xs:documentation>Transition is an empty element that denotes a transition object.</xs:documentation>
@@ -4234,5 +4234,5 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

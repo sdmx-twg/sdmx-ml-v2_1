@@ -2,7 +2,7 @@
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Structure Specific Metadata Namespace Module</xs:appinfo>
     <xs:documentation>The structure specific metadata namespace module provides the common framework to be used for all metadata structure definition-specific schemas for reference metadata reporting. This forms the basis for all sets of namespace modules created and maintained by those who create metadata structure definition-specific reference metadata schemas which are not maintained by SDMX.</xs:documentation>
@@ -30,8 +30,8 @@
         <xs:attributeGroup ref="SetAttributeGroup"/>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType> 
-  
+  </xs:complexType>
+
   <xs:complexType name="ReportType" abstract="true">
     <xs:annotation>
       <xs:documentation>ReportType is an abstract base type the forms the basis for a metadata structure definition specific report, based on the defined report structures. This type is restricted in the metadata structure definition specific schema so that the Target and AttributeSet conform to the prescribed report structure.</xs:documentation>
@@ -49,7 +49,7 @@
               <xs:documentation>AttributeSet contains the reported metadata attribute values for the reported metadata. This element is unqualified and un-typed so that it can refined by the metadata structure definition specific schema to validate that the reported metadata attributes conform to those prescribed by the report structure. The content of this must be element only, and these elements must always represent a reported attribute. Since this can not be strictly enforced in XML Schema, additional steps have been added to make generic processing of this element simpler. When processing this element, any element found with the attribute isMetadataAttribute in this target namespace is assumed to be a reported metadata attribute and can be processed as such.</xs:documentation>
             </xs:annotation>
           </xs:element>
-        </xs:sequence>  
+        </xs:sequence>
         <xs:attribute name="id" type="common:IDType" use="optional">
           <xs:annotation>
             <xs:documentation>The id attribute holds the identifier of the report structure as defined in the metadata structure definition. This identifies the report structure which defines the structure of metadata that is being reported. This is optional and not expected to be supplied as the metadata structure definition specific schema will specify a fixed value such that the reference to the report structure will always be available if required for processing.</xs:documentation>
@@ -58,7 +58,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="TargetType" abstract="true">
     <xs:annotation>
       <xs:documentation>TargetType is an abstract base type that forms the basis of a the metadata report's metadata target value. This type is restricted in the metadata structure definition specific schema so that the ReferenceValue elements conform to the targets specified in the metadata target defined in the metadata structure definition.</xs:documentation>
@@ -76,7 +76,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="ReferenceValueType" abstract="true">
     <xs:annotation>
       <xs:documentation>ReferenceValueType is an abstract base type that forms the basis of a target reference value. A target reference value will either be a reference to an identifiable object, a data key, a reference to a data set, or a report period. The choice of these options will be refined to only one according to the definition of the target in the metadata structure definition.</xs:documentation>
@@ -114,7 +114,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="ReportedAttributeType" abstract="true">
     <xs:annotation>
       <xs:documentation>ReportedAttributeType is an abstract base type that forms the basis for a metadata structure specific metadata attribute. A value for the attribute can be supplied as either a single value, or multi-lingual text values (either structured or unstructured). An optional set of child metadata attributes is also available if the metadata attribute definition defines nested metadata attributes. The metadata structure definition specific schema will refine this type for each metadata attribute such that the content can be validation against what is defined in the metadata structure definition.</xs:documentation>
@@ -158,7 +158,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:attributeGroup name="SetAttributeGroup">
     <xs:annotation>
       <xs:documentation>The SetAttributeGroup defines a common set of attributes pertaining to any metadata set. The attributes are qualified, so that they will be easily distinguished from attributes that are specific to the metadata structure. Note that many of these attributes are duplications of fields available in the header of the metadata messages. The reason for this is to allow the header values to be overridden at the metadata set level when a message contains more than one metadata set. If an attribute here does not have a value, then the value from the header is applied to the metadata set.</xs:documentation>
@@ -209,5 +209,5 @@
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
-  
+
 </xs:schema>

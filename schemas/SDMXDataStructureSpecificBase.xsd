@@ -12,9 +12,9 @@
     <xs:annotation>
       <xs:documentation>
       <p>DataSetType is the abstract type which defines the base structure for any data structure definition specific data set. A derived data set type will be created that is specific to a data structure definition and the details of the organisation of the data (i.e. which dimension is the observation dimension and whether explicit measures should be used). Data is organised into either a collection of series (grouped observations) or a collection of un-grouped observations. The derived data set type will restrict this choice to be either grouped or un-grouped observations. If this dimension is "AllDimensions" then the derived data set type must consist of a collection of un-grouped observations; otherwise the data set will contain a collection of series with the observations in the series disambiguated by the specified dimension at the observation level. This data set is capable of containing data (observed values) and/or documentation (attribute values) and can be used for incremental updates and deletions (i.e. only the relevant updates or deletes are exchanged). It is assumed that each series or un-grouped observation will be distinct in its purpose. For example, if series contains both data and documentation, it assumed that each series will have a unique key. If the series contains only data or only documentation, then it is possible that another series with the same key might exist, but with not with the same purpose (i.e. to provide data or documentation) as the first series.</p>
-      
+
       <p>This base type is designed such that derived types can be processed in a generic manner; it assures that data structure definition specific data will have a consistent structure. The group, series, and observation elements are unqualified, meaning that they are not qualified with a namespace in an instance. This means that in the derived data set types, the elements will always be the same, regardless of the target namespace of the schemas which defines these derived types. This allows for consistent processing of the structure without regard to what the namespace might be for the data structure definition specific schema.</p>
-      
+
       <p>The data set can contain values for attributes which do not have an attribute relationship with any data structure definition components. These attribute values will exist in XML attributes in this element based on this type (DataSet). This is specified in the content model with the declaration of anyAttributes in the "local" namespace. The derived data set type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). To allow for generic processing, it is required that the only unqualified XML attributes in the derived data set type (outside of the standard data set attributes) be for attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition attribute.</p>
       </xs:documentation>
     </xs:annotation>
@@ -54,12 +54,12 @@
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
-  
+
   <xs:complexType name="GroupType" abstract="true">
     <xs:annotation>
       <xs:documentation>
       <p>GroupType is the abstract type which defines a structure which is used to communicate attribute values for a group defined in a data structure definition. The group can consist of either a subset of the dimensions defined by the data structure definition, or an association to an attachment constraint, which in turn defines key sets to which attributes can be attached. In the case that the group is based on an attachment constraint, only the identification of group is provided. It is expected that a system which is processing this will relate that identifier to the key sets defined in the constraint and apply the values provided for the attributes appropriately.</p>
-      
+
       <p>Data structure definition schemas will drive types based on this for each group defined in the data structure definition. Both the dimension values which make up the key (if applicable) and the attribute values associated with the group will be represented with XML attributes. This is specified in the content model with the declaration of anyAttributes in the "local" namespace. The derived group type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). The dimension XML attributes will be required while the attribute XML attributes will be optional. To allow for generic processing, it is required that the only unqualified XML attributes in the derived group type be for the group dimensions and attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition dimension or attribute.</p>
       </xs:documentation>
     </xs:annotation>
@@ -79,12 +79,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="SeriesType" abstract="true">
     <xs:annotation>
       <xs:documentation>
       <p>SeriesType is the abstract type which defines a structure which is used to group a collection of observations which have a key in common. The key for a series is every dimension defined in the data structure definition, save the dimension declared to be at the observation level for this data set. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the observation dimension). It is possible for the series to contain only observations or only attribute values, or both.</p>
-      
+
       <p>Data structure definition schemas will drive a type based on this that is specific to the data structure definition and the variation of the format being expressed in the schema. Both the dimension values which make up the key and the attribute values associated with the key dimensions will be represented with XML attributes. This is specified in the content model with the declaration of anyAttributes in the "local" namespace. The derived series type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). The dimension XML attributes will be required while the attribute XML attributes will be optional. To allow for generic processing, it is required that the only unqualified XML attributes in the derived group type be for the series dimensions and attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition dimension or attribute.</p>
       </xs:documentation>
     </xs:annotation>
@@ -107,14 +107,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ObsType" abstract="true">
     <xs:annotation>
       <xs:documentation>
       <p>ObsType is the abstract type which defines the structure of a grouped or un-grouped observation. The observation must be provided a key, which is either a value for the dimension which is declared to be at the observation level if the observation is grouped, or a full set of values for all dimensions in the data structure definition if the observation is un-grouped. This key should disambiguate the observation within the context in which it is defined (e.g. there should not be another observation with the same dimension value in a series). The observation can contain an observed value and/or attribute values.</p>
-      
+
       <p>Data structure definition schemas will drive a type or types based on this that is specific to the data structure definition and the variation of the format being expressed in the schema. The dimension value(s) which make up the key and the attribute values associated with the key dimension(s) or the primary measure will be represented with XML attributes. This is specified in the content model with the declaration of anyAttributes in the "local" namespace. The derived observation type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). The dimension XML attribute(s) will be required while the attribute XML attributes will be optional. To allow for generic processing, it is required that the only unqualified XML attributes in the derived observation type be for the observation dimension(s) and attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition dimension or attribute.</p>
-      
+
       <p>If the data structure definition specific schema requires that explicit measures be used (only possible when the measure dimension is specified at the observation), then there will be types derived for each measure defined by the measure dimension. In this case, the types will be specific to each measure, which is to say that the representation of the primary measure (i.e. the observed value) will be restricted to that which is specified by the specific measure.</p>
       </xs:documentation>
     </xs:annotation>
@@ -144,7 +144,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="DataScopeType">
     <xs:annotation>
       <xs:documentation>DataScopeType is an enumeration of the possible validity scopes for a data set. These scopes indicate the level at which the data is stated to be valid.</xs:documentation>
@@ -172,7 +172,7 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:attributeGroup name="SetAttributeGroup">
     <xs:annotation>
       <xs:documentation>The SetAttributeGroup defines a common set of attributes pertaining to any data set. The attributes are qualified, so that they will be easily distinguished from attributes that are specific to the data structure. Note that many of these attributes are duplications of fields available in the header of the data messages. The reason for this is to allow the header values to be overridden at the data set level when a message contains more than one data set. If an attribute here does not have a value, then the value from the header is applied to the data set.</xs:documentation>
@@ -228,5 +228,5 @@
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
-  
+
 </xs:schema>

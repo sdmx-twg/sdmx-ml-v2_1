@@ -87,7 +87,7 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
-  
+
   <xs:complexType name="SimpleDataSourceType">
     <xs:annotation>
       <xs:documentation>SimpleDataSourceType describes a simple data source. The URL of the data is contained in the content.</xs:documentation>
@@ -102,7 +102,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:complexType name="QueryableDataSourceType">
     <xs:annotation>
       <xs:documentation>QueryableDataSourceType describes a queryable data source, and add a fixed attribute for ensuring only one queryable source can be provided.</xs:documentation>
@@ -138,7 +138,7 @@
     </xs:annotation>
     <xs:union memberTypes="common:VersionQueryType common:WildCardValueType"/>
   </xs:simpleType>
-  
+
   <xs:complexType name="IdentifiableQueryType">
     <xs:annotation>
       <xs:documentation>IdentifiableQueryType describes the structure of a query for an identifiable object.</xs:documentation>
@@ -147,9 +147,9 @@
       <xs:annotation>
         <xs:documentation>The id attribute is used to query for an object based on its identifier. This is either an explicit value, or completely wild cared with the "%" value.</xs:documentation>
       </xs:annotation>
-    </xs:attribute>   
+    </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="VersionableQueryType">
     <xs:annotation>
       <xs:documentation>VersionableQueryType describes the structure of a query for a versionable object.</xs:documentation>
@@ -164,7 +164,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MaintainableQueryType">
     <xs:annotation>
       <xs:documentation>MaintainableQueryType describes the structure of a query for a maintainable object.</xs:documentation>
@@ -179,7 +179,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StatusMessageType">
     <xs:annotation>
       <xs:documentation>StatusMessageType carries the text of error messages and/or warnings in response to queries or requests.</xs:documentation>
@@ -220,5 +220,5 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

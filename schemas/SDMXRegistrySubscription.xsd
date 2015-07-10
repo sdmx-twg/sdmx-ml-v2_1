@@ -65,7 +65,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="SubscriptionRequestType">
     <xs:annotation>
       <xs:documentation>SubscriptionRequestType describes the structure of a single subscription request. It contains subscription details and an action field to indicate the action to be taken on the contained subscription. Note that if the action is update or delete, then the registry supplied URN for the subscription must be included.</xs:documentation>
@@ -83,7 +83,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="SubmitSubscriptionsResponseType">
     <xs:annotation>
       <xs:documentation>SubmitSubscriptionsResponseType describes the structure of the response to a new subscription submission. A status is provided for each subscription in the request.</xs:documentation>
@@ -96,7 +96,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="SubscriptionStatusType">
     <xs:annotation>
       <xs:documentation>SubscriptionStatusType describes the structure a status for a single subscription request.</xs:documentation>
@@ -117,9 +117,9 @@
           <xs:documentation>StatusMessage provides that status for the subscription request, and if necessary, any error or warning information.</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:sequence>    
+    </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="QuerySubscriptionRequestType">
     <xs:annotation>
       <xs:documentation>QuerySubscriptionRequestType describes the structure of a query for subscriptions. Subscriptions for a given organisation may be retrieved.</xs:documentation>
@@ -132,7 +132,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="QuerySubscriptionResponseType">
     <xs:annotation>
       <xs:documentation>QuerySubscriptionResponseType describes the structure of a subscription query response. A status will describe the success or failure of the request (and provide error or warning messages if necessary). If the query was successful, details of all of the organisation's subscriptions will be provided.</xs:documentation>
@@ -150,7 +150,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="NotifyRegistryEventType">
     <xs:annotation>
       <xs:documentation>NotifyRegistryEventType describes the structure a registry notification, in response to a subscription to a registry event. At a minimum, the event time, a reference to the change object, a reference to the underlying subscription triggering the notification, and the action that took place on the object are sent. In addition, the full details of the object may be provided at the discretion of the registry. In the event that the details are not sent, it will be possible to query for the details of the changed object using the reference provided.</xs:documentation>
@@ -172,7 +172,7 @@
             <xs:documentation>RegistrationID provides the id of the registration that underwent an event.</xs:documentation>
           </xs:annotation>
         </xs:element>
-      </xs:choice>      
+      </xs:choice>
       <xs:element name="SubscriptionURN" type="xs:anyURI">
         <xs:annotation>
           <xs:documentation>SubscriptionURN provides the registry/repository URN of the subscription that is the cause of this notification being sent.</xs:documentation>
@@ -197,7 +197,7 @@
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="NotificationURLType">
     <xs:annotation>
       <xs:documentation>NotificationURLType describes the structure of an http or email address. The content holds the addresses while an attribute indicates whether or not is expects the contents in a SOAP message.</xs:documentation>
@@ -212,7 +212,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ValidityPeriodType">
     <xs:annotation>
       <xs:documentation>ValidityPeriodType specifies inclusive start and end-dates for the subscription period.</xs:documentation>
@@ -530,7 +530,7 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="MaintainableEventType">
     <xs:annotation>
       <xs:documentation>MaintainableEventType provides a reference to a maintainable object's event with either the URN of the specific object, or a set of potentially wild-carded reference fields.</xs:documentation>
@@ -548,7 +548,7 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
-  
+
   <xs:complexType name="StructuralEventType">
     <xs:annotation>
       <xs:documentation>StructuralEventType provides the details of a structure event, specifically the object that changed.</xs:documentation>
@@ -573,6 +573,6 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-  </xs:complexType> 
-  
+  </xs:complexType>
+
 </xs:schema>

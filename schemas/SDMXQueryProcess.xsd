@@ -3,7 +3,7 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:query="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXQueryBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Process Query Module</xs:appinfo>
     <xs:documentation>The process query module provides the construct of a query for a process.</xs:documentation>
@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ProcessWhere" type="ProcessWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>ProcessWhere contains the parameters for a process query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to query based on the details of the process steps defined within the process. In any case, the entire process will be returned according the indicated return detail.</xs:documentation>
@@ -55,7 +55,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ProcessWhereType">
     <xs:annotation>
       <xs:documentation>ProcessWhereType defines the parameters of a process query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>
@@ -135,5 +135,5 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

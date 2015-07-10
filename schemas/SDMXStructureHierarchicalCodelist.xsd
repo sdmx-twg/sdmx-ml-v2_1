@@ -3,12 +3,12 @@
 <xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXStructureBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Hierarchical Code List Structure Module</xs:appinfo>
     <xs:documentation>The hierarchical code list structure module defines the structure of hierarchical code list constructs.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="HierarchicalCodelistBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>HierarchicalCodelistBaseType is an abstract base class that is the basis for the HierarchicalCodelistType. It requires that a name be supplied.</xs:documentation>
@@ -53,7 +53,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="HierarchyBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>HierarchyBaseType is an abstract base type that serves as the basis for the HierarchyType. It requires a name and id be provided.</xs:documentation>
@@ -100,7 +100,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-    
+
   <xs:complexType name="HierarchicalCodeBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>HierarchicalCodeBaseType is an abstract base type the creates the basis for the HierarchicalCodeType. It removes the urn and uri.</xs:documentation>
@@ -152,7 +152,7 @@
             <xs:unique name="ChildHierarchicalCode_UnqiueHierarchicalCode">
               <xs:selector xpath="structure:HierarchicalCode"/>
               <xs:field xpath="@id"/>
-            </xs:unique>            
+            </xs:unique>
           </xs:element>
           <xs:element name="Level" type="common:LocalLevelReferenceType" minOccurs="0">
             <xs:annotation>
@@ -178,7 +178,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="LevelBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>LevelBaseType is an abstract base type that makes up the basis for the LevelType. It requires a name and id.</xs:documentation>
@@ -231,7 +231,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="CodingTextFormatType">
     <xs:complexContent>
       <xs:restriction base="SimpleComponentTextFormatType">
@@ -252,7 +252,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="SimpleCodeDataType">
     <xs:annotation>
       <xs:documentation>SimpleCodeDataType restricts SimpleDataType to specify the allowable data types for a simple code. The possible values are simply Alpha, AlphaNumeric, or Numeric.</xs:documentation>
@@ -263,5 +263,5 @@
       <xs:enumeration value="Numeric"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="ProvisionAgreementWhere" type="ProvisionAgreementWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>ProvisionAgreementWhere contains the parameters for a provision agreement query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search for a provision agreement based on the data provider and the structure usage it pairs.</xs:documentation>
@@ -55,7 +55,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ProvisionAgreementWhereType">
     <xs:annotation>
       <xs:documentation>ProvisionAgreementWhereType defines the parameters of a provision agreement query. All supplied parameters must be matched in order for an object to satisfy the query.</xs:documentation>

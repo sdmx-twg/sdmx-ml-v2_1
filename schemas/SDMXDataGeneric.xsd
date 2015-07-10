@@ -8,5 +8,5 @@
     <xs:appinfo>SDMX Generic Data Namespace Module</xs:appinfo>
     <xs:documentation>The generic data namespace module defines the generic (non-data structure definition specific) format for data.</xs:documentation>
   </xs:annotation>
-  
+
 </xs:schema>

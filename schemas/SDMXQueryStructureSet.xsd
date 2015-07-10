@@ -22,7 +22,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:element name="StructureSetWhere" type="StructureSetWhereType" substitutionGroup="StructuralMetadataWhere">
     <xs:annotation>
       <xs:documentation>StructureSetWhere contains the parameters for a structure query. All parameters must be matched for an object to satisfy the query. In addition to querying based on the basic maintainable properties, it is also possible to search based on the structures that are related by the set or the objects which are mapped by the set's maps. In any case, the structure set will be returned according the indicated return detail.</xs:documentation>
@@ -55,7 +55,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="StructureSetWhereType">
     <xs:annotation>
       <xs:documentation>StructureSetWhereType defines the parameters of a structure set query. All supplied parameters must be matched in order for an object to satisfy the query. In addition to querying based on the base maintainable parameters, it is also possible to search based on the structures that are related by the set or the objects which are mapped by the set's maps.</xs:documentation>
@@ -77,7 +77,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MappedObjectType">
     <xs:annotation>
       <xs:documentation>MappedObjectType defines a structure for referencing an object and indicating whether it is the source, target, or either for the purposes of query for structure set containing the referenced object in one of the maps it defines.</xs:documentation>
@@ -92,7 +92,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MappedObjectReferenceType">
     <xs:annotation>
       <xs:documentation>MappedObjectReferenceType is a type for referencing any mappable object. It consists of a URN and/or a complete set of reference fields; agency, id, and version.</xs:documentation>
@@ -109,7 +109,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MappedObjectRefType">
     <xs:annotation>
       <xs:documentation>MappedObjectRefType defines a set of reference fields for any type of mappable object.</xs:documentation>
@@ -117,11 +117,11 @@
     <xs:complexContent>
       <xs:restriction base="common:MaintainableRefType">
         <xs:attribute name="class" type="MappedObjectTypeCodelistType" use="required"/>
-        <xs:attribute name="package" type="common:PackageTypeCodelistType" use="required"/>       
+        <xs:attribute name="package" type="common:PackageTypeCodelistType" use="required"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="MappedObjectTypeCodelistType">
     <xs:annotation>
       <xs:documentation>MappedObjectTypeCodelistType is a restriction of the MaintainableTypeCodelistType which contains only the object types which can be mapped in a structure set.</xs:documentation>
@@ -142,7 +142,7 @@
       <xs:enumeration value="ReportingTaxonomy"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:simpleType name="SourceTargetType">
     <xs:annotation>
       <xs:documentation>SourceTargetType is an enumeration to indicate whether an object is the source, target, or either of the two options.</xs:documentation>
@@ -153,5 +153,5 @@
       <xs:enumeration value="Target"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>

@@ -8,7 +8,7 @@
     <xs:appinfo>SDMX Concept Structure Module</xs:appinfo>
     <xs:documentation>The concept structure module defines the structure of concept scheme, concept, and stand-alone concept constructs.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="ConceptSchemeType">
     <xs:annotation>
       <xs:documentation>onceptSchemeType describes the structure of a concept scheme. A concept scheme is the descriptive information for an arrangement or division of concepts into groups based on characteristics, which the objects have in common. It contains a collection of concept definitions, that may be arranged in simple hierarchies.</xs:documentation>
@@ -54,7 +54,7 @@
                 <xs:documentation>Parent captures the semantic relationships between concepts which occur within a single concept scheme. This identifies the concept of which the current concept is a qualification (in the ISO 11179 sense) or subclass.</xs:documentation>
               </xs:annotation>
             </xs:element>
-          </xs:choice>          
+          </xs:choice>
         </xs:sequence>
         <xs:attribute name="id" type="common:NCNameIDType" use="required">
           <xs:annotation>
@@ -80,13 +80,13 @@
           <xs:element name="ISOConceptReference" type="ISOConceptReferenceType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Provides a reference to an ISO 11179 concept.</xs:documentation>
-            </xs:annotation>          
+            </xs:annotation>
           </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ConceptRepresentation">
     <xs:annotation>
       <xs:documentation>ConceptRepresentation defines the core representation that are allowed for a concept. The text format allowed for a concept is that which is allowed for any non-target object component.</xs:documentation>
@@ -107,7 +107,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ISOConceptReferenceType">
     <xs:annotation>
       <xs:documentation>ISOConceptReferenceType provides a reference to and ISO 11179 concept.</xs:documentation>

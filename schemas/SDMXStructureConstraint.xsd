@@ -8,7 +8,7 @@
     <xs:appinfo>SDMX Constraint Structure Module</xs:appinfo>
     <xs:documentation>The constraint structure module defines the structure of attachment and content constraint constructs.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="ConstraintBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>ConstraintBaseType is an abstract base type that forms the basis of the main abstract ConstraintType. It requires that a name be provided.</xs:documentation>
@@ -22,7 +22,7 @@
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
 
   <xs:complexType name="ConstraintType" abstract="true">
     <xs:annotation>
@@ -62,7 +62,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="AttachmentConstraintType">
     <xs:annotation>
       <xs:documentation>AttachmentConstraintType describes the details of an attachment constraint by defining the data or metadata key sets or component regions that attributes or reference metadata may be attached in the constraint attachment objects.</xs:documentation>
@@ -82,7 +82,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ContentConstraintBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>ContentConstraintBaseType is an abstract base type that forms the basis for the ContentConstraintType.</xs:documentation>
@@ -124,7 +124,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ContentConstraintType">
     <xs:annotation>
       <xs:documentation>ContentConstraintType describes the details of a content constraint by defining the content regions, key sets, or release information for the constraint attachment objects. Note that if the constraint is for a data provider, then only release calendar information is relevant, as there is no reliable way of determining which key family is being used to frame constraints in terms of cube regions or key sets.</xs:documentation>
@@ -151,7 +151,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ReleaseCalendarType">
     <xs:annotation>
       <xs:documentation>ReleaseCalendarType describes information about the timing of releases of the constrained data. All of these values use the standard "P7D" - style format.</xs:documentation>
@@ -174,7 +174,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="KeySetType" abstract="true">
     <xs:annotation>
       <xs:documentation>KeySetType is an abstract base type for defining a collection of keys.</xs:documentation>
@@ -209,7 +209,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="MetadataKeySetType">
     <xs:annotation>
       <xs:documentation>MetadataKeySetType defines a collection of metadata keys (identifier component values).</xs:documentation>
@@ -299,7 +299,7 @@
             <xs:annotation>
               <xs:documentation>QueryableDataSource describes a queryable data source to which the constraint is attached.</xs:documentation>
             </xs:annotation>
-          </xs:element>         
+          </xs:element>
         </xs:sequence>
         <xs:sequence>
           <xs:element name="ProvisionAgreement" type="common:ProvisionAgreementReferenceType" maxOccurs="unbounded">
@@ -316,7 +316,7 @@
       </xs:choice>
     </xs:choice>
   </xs:complexType>
-  
+
   <xs:complexType name="AttachmentConstraintAttachmentType">
     <xs:annotation>
       <xs:documentation>AttachmentConstraintAttachmentType defines the structure for specifying the object to which an attachment constraints applies.</xs:documentation>
@@ -350,7 +350,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="ContentConstraintAttachmentType">
     <xs:annotation>
       <xs:documentation>ContentConstraintAttachmentType defines the structure for specifying the target object(s) of a content constraint.</xs:documentation>
@@ -377,7 +377,7 @@
             </xs:sequence>
             <xs:sequence>
               <xs:element name="Metadataflow" type="common:MetadataflowReferenceType" maxOccurs="unbounded"/>
-              <xs:element name="QueryableDataSource" type="common:QueryableDataSourceType" minOccurs="0" maxOccurs="unbounded"/>          
+              <xs:element name="QueryableDataSource" type="common:QueryableDataSourceType" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="ProvisionAgreement" type="common:ProvisionAgreementReferenceType" maxOccurs="unbounded"/>
@@ -388,5 +388,5 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
 </xs:schema>

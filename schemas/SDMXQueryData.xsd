@@ -3,12 +3,12 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:query="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXQueryBase.xsd"/>
-  
+
   <xs:annotation>
     <xs:appinfo>SDMX Data Query Module</xs:appinfo>
     <xs:documentation>The data query module provides the construct of a query for a data.</xs:documentation>
   </xs:annotation>
-  
+
   <xs:complexType name="DataQueryType">
     <xs:annotation>
       <xs:documentation>DataQueryType defines the structure of a query for data. This is generally appliable for any data request, but can be refined depending on the type of data being queried (generic or structured, time series specific or not) to the requirements of the requested format.</xs:documentation>
@@ -68,7 +68,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataReturnDetailsBaseType" abstract="true">
     <xs:annotation>
       <xs:documentation>DataReturnDetailsBaseType is an abstract base type which forms the basis of the DataReturnDetailsType.</xs:documentation>
@@ -79,11 +79,11 @@
           <xs:annotation>
             <xs:documentation>The detail attribute is used to indicate whether the response to the query should return the full details of matched data sets, or just a subset of the information should be returned. A value of "Full" indicates that the complete data set (including data and documentation) will be returned. A value of "DataOnly" indicates that only the observation values and keys should be returned. A value of "SeriesKeyOnly" indicates that only the Series elements and their keys (i.e. Dimension values) should be returned. A value of "NoData" indicates that only documentation should be returned (i.e. the DataSet, Group, and Series level Attributes).</xs:documentation>
           </xs:annotation>
-        </xs:attribute>         
+        </xs:attribute>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataReturnDetailsType">
     <xs:annotation>
       <xs:documentation>DataReturnDetailsType specifies the specifics of the how data should be returned, including how it should be structured and how many and what type (e.g. active or deleted) observations should be returned.</xs:documentation>
@@ -191,7 +191,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataParametersType" abstract="true">
     <xs:annotation>
       <xs:documentation>DataParametersType defines the parameters for querying for data. This structure is refined by separate And/Or constructs which make logical restrictions on which parameters apply in such cases.</xs:documentation>
@@ -284,7 +284,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="DataParametersOrType">
     <xs:annotation>
       <xs:documentation>DataParametersOrType refines the base data parameters to define a set of parameters joined by an "or" condition. Only one of the parameters supplied in an instance of this type can be satisfied to result in a match.</xs:documentation>
@@ -307,12 +307,12 @@
           <xs:element name="PrimaryMeasureValue" type="PrimaryMeasureValueType" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="AttachmentConstraint" type="common:AttachmentConstraintReferenceType" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="TimeFormat" type="common:TimeDataType" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element name="And" type="DataParametersAndType" minOccurs="0" maxOccurs="unbounded"/>         
-        </xs:sequence>        
+          <xs:element name="And" type="DataParametersAndType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataParametersAndType">
     <xs:annotation>
       <xs:documentation>DataParametersAndType refines the base data parameters to define a set of parameters joined by an "and" conditions. All of the parameters supplied in an instance of this type must be satisfied to result in a match. As a result of this condition, the maximum occurrence of some parameters has been reduced so as to not allow for impossible conditions to be specified (for example data cannot be matched is it is specified that the data set identifier should be "xyz" and the data identifier should be "abc".</xs:documentation>
@@ -335,12 +335,12 @@
           <xs:element name="PrimaryMeasureValue" type="PrimaryMeasureValueType" minOccurs="0"/>
           <xs:element name="AttachmentConstraint" type="common:AttachmentConstraintReferenceType" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="TimeFormat" type="common:TimeDataType" minOccurs="0"/>
-          <xs:element name="Or" type="DataParametersOrType" minOccurs="0" maxOccurs="unbounded"/>         
-        </xs:sequence>        
+          <xs:element name="Or" type="DataParametersOrType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="DataStructureComponentValueQueryType" abstract="true">
     <xs:annotation>
       <xs:documentation>DataStructureComponentValueQueryType is an abstract base type that is the basis for query a data structure definition component for a particular value. Multiple values may be supplied, but the component value must match all of the value conditions supplied in order to return a match.</xs:documentation>
@@ -359,7 +359,7 @@
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="DimensionValueType">
     <xs:annotation>
       <xs:documentation>DimensionValueType is used to query for data where a given dimension has a particular value.</xs:documentation>
@@ -431,7 +431,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="ObservationActionCodeType">
     <xs:annotation>
       <xs:documentation>ObservationActionCodeType enumerates the type of observations to be returned.</xs:documentation>
@@ -459,5 +459,5 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>
