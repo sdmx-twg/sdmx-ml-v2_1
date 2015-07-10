@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
-<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.1_20130301">
   <xs:include schemaLocation="SDMXCommonReferences.xsd"/>
   <!-- Note: The following import statement sometimes causes problems with IE 6.* If you have this problem, comment it out. -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
@@ -207,7 +207,7 @@
       <xs:documentation>AlphaNumericType is a reusable simple type that allows for only mixed-case alphabetical and numeric characters.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="[A-z0-9]+"/>
+      <xs:pattern value="[A-Za-z0-9]+"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -216,7 +216,7 @@
       <xs:documentation>AlphaType is a reusable simple type that allows for only mixed-case alphabetical characters. This is derived from the AlphaNumericType.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="AlphaNumericType">
-      <xs:pattern value="[A-z]+"/>
+      <xs:pattern value="[A-Za-z]+"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -1394,12 +1394,12 @@
       </xs:enumeration>
       <xs:enumeration value="Alpha">
         <xs:annotation>
-          <xs:documentation>A string datatype which only allows for the simple aplhabetic charcter set of A-z.</xs:documentation>
+          <xs:documentation>A string datatype which only allows for the simple aplhabetic charcter set of A-Z, a-z.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="AlphaNumeric">
         <xs:annotation>
-          <xs:documentation>A string datatype which only allows for the simple alphabetic character set of A-z plus the simple numeric character set of 0-9.</xs:documentation>
+          <xs:documentation>A string datatype which only allows for the simple alphabetic character set of A-Z, a-z plus the simple numeric character set of 0-9.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Numeric">

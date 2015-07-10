@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
-<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" version="2.1_20130301">
+
 
   <xs:annotation>
     <xs:appinfo>SDMX Common References Module</xs:appinfo>
@@ -14,7 +15,7 @@
       <xs:documentation>NestedIDType is the least restrictive form of an identifier used throughout all SDMX-ML messages. It allows for a hierarchical identifier, with each portion separated by the '.' character. For the identifier portions, valid characters include A-Z, a-z, @, 0-9, _, -, $.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="[A-z0-9_@$\-]+(\.[A-z0-9_@$\-]+)*"/>
+      <xs:pattern value="[A-Za-z0-9_@$\-]+(\.[A-Za-z0-9_@$\-]+)*"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -23,7 +24,7 @@
       <xs:documentation>TwoLevelIDType defines an identifier with exactly two levels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="NestedIDType">
-      <xs:pattern value="[A-z0-9_@$\-]+\.[A-z0-9_@$\-]+"/>
+      <xs:pattern value="[A-Za-z0-9_@$\-]+\.[A-Za-z0-9_@$\-]+"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -32,7 +33,7 @@
       <xs:documentation>IDType provides a type which is used for restricting the characters in codes and IDs throughout all SDMX-ML messages. Valid characters include A-Z, a-z, @, 0-9, _, -, $.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="NestedIDType">
-      <xs:pattern value="[A-z0-9_@$\-]+"/>
+      <xs:pattern value="[A-Za-z0-9_@$\-]+"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -41,7 +42,7 @@
       <xs:documentation>NCNameIDType restricts the IDType, so that the id may be used to generate valid XML components. IDs created from this type conform to the W3C XML Schema NCNAME type, and therefore can be used as element or attribute names.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="IDType">
-      <xs:pattern value="[A-z][A-z0-9_\-]*"/>
+      <xs:pattern value="[A-Za-z][A-Za-z0-9_\-]*"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -50,7 +51,7 @@
       <xs:documentation>NestedNCNameIDType restricts the NestedIDType, so that the id may be used to generate valid XML components. IDs created from this type conform to the W3C XML Schema NCNAME type, and therefore can be used as element or attribute names.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="NestedIDType">
-      <xs:pattern value="[A-z][A-z0-9_\-]*(\.[A-z][A-z0-9_\-]*)*"/>
+      <xs:pattern value="[A-Za-z][A-Za-z0-9_\-]*(\.[A-Za-z][A-Za-z0-9_\-]*)*"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -59,7 +60,7 @@
       <xs:documentation>SingleNCNameIDType restricts the NestedNCNameIDType to allow only one level. Note that this is the same pattern as the NCNameIDType, but can be used when the base type to be restricted is a nested NCNameIDType (where as the NCNameIDType could only restrict the IDType).</xs:documentation>
     </xs:annotation>
     <xs:restriction base="NestedNCNameIDType">
-      <xs:pattern value="[A-z][A-z0-9_\-]*"/>
+      <xs:pattern value="[A-Za-z][A-Za-z0-9_\-]*"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -3478,6 +3479,7 @@
     </xs:restriction>
   </xs:simpleType>
 
+
   <xs:simpleType name="MaintainableTypeCodelistType">
     <xs:annotation>
       <xs:documentation>MaintainableTypeCodelistType provides an enumeration of all maintainable objects.</xs:documentation>
@@ -4126,6 +4128,7 @@
       <xs:documentation>TimeDimension is an empty element that denotes a time dimension object.</xs:documentation>
     </xs:annotation>
   </xs:element>
+
 
   <xs:element name="Transition" type="EmptyType">
     <xs:annotation>
