@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
-<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" version="2.1_20140520">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
   <xs:include schemaLocation="SDMXStructureBase.xsd"/>
 
@@ -450,7 +450,7 @@
               <xs:documentation>Target provides a reference to a structure (data or metadata) or a structure usage (dataflow or metadataflow) to which components from the source are to mapped.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ComponentMap" type="ComponentMapType" maxOccurs="unbounded">
+          <xs:element name="ComponentMap" type="ComponentMapType" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>ComponentMap defines the relationship between the components of the source and target structures, including information on how the value from the source component relates to values in the target component.</xs:documentation>
             </xs:annotation>
