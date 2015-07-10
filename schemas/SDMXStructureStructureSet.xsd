@@ -450,7 +450,7 @@
               <xs:documentation>Target provides a reference to a structure (data or metadata) or a structure usage (dataflow or metadataflow) to which components from the source are to mapped.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ComponentMap" type="ComponentMapType">
+          <xs:element name="ComponentMap" type="ComponentMapType" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>ComponentMap defines the relationship between the components of the source and target structures, including information on how the value from the source component relates to values in the target component.</xs:documentation>
             </xs:annotation>

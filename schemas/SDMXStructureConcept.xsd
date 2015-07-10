@@ -6,7 +6,7 @@
 
   <xs:annotation>
     <xs:appinfo>SDMX Concept Structure Module</xs:appinfo>
-    <xs:documentation>The concept structure module defines the structure of concept scheme, concept, and stand-alone concept constructs.</xs:documentation>
+    <xs:documentation>The concept structure module defines the structure of concept scheme and concept constructs.</xs:documentation>
   </xs:annotation>
 
   <xs:complexType name="ConceptSchemeType">
