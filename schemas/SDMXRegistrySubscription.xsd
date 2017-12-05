@@ -422,7 +422,7 @@
             <xs:documentation>ID subscribes to the events of the specific instance of the object type where the value provided here matches the id of the object and the value provided in the version field matches the version of the object. The default value is the wildcard character("%").</xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="Version" type="VersionQueryType" default="%">
+        <xs:element name="Version" type="common:VersionQueryType" default="%">
           <xs:annotation>
             <xs:documentation>Version subscribes to the events of the specific instance of the object type where the value provided in the id field matches the id of the object and the value here matches the version of the object. The default value is the wildcard character("%"). Note that in addition to being wild-carded, this can also be bound to the latest version of the object with the late-bound character("*").</xs:documentation>
           </xs:annotation>
