@@ -77,7 +77,7 @@
     <xs:annotation>
       <xs:documentation>VersionQueryType combines the VersionType and LateBoundVersionType to allow one to query for either a specific version of an object, or the latest version by specifying the '*' value.</xs:documentation>
     </xs:annotation>
-    <xs:union memberTypes="VersionType LateBoundVersionType"/>
+    <xs:union memberTypes="VersionType LateBoundVersionType WildCardValueType"/>
   </xs:simpleType>
 
   <xs:simpleType name="LateBoundVersionType">
