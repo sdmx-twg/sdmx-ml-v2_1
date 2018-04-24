@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
-<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.1_20130301">
+<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" elementFormDefault="qualified" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.1_20180323">
   <xs:include schemaLocation="SDMXCommonReferences.xsd"/>
   <!-- Note: The following import statement sometimes causes problems with IE 6.* If you have this problem, comment it out. -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
