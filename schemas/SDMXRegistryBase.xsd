@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright SDMX 2010 - http://www.sdmx.org -->
-<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+<xs:schema targetNamespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" version="2.1_20180323">
   <xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
 
   <xs:annotation>
@@ -132,13 +132,6 @@
     <xs:union memberTypes="common:NestedIDType common:WildCardValueType"/>
   </xs:simpleType>
 
-  <xs:simpleType name="VersionQueryType">
-    <xs:annotation>
-      <xs:documentation>VersionQueryType is a simple type that allows for a version number to be substituted with a wild card character ("%") or a late bound character ("*").</xs:documentation>
-    </xs:annotation>
-    <xs:union memberTypes="common:VersionQueryType common:WildCardValueType"/>
-  </xs:simpleType>
-
   <xs:complexType name="IdentifiableQueryType">
     <xs:annotation>
       <xs:documentation>IdentifiableQueryType describes the structure of a query for an identifiable object.</xs:documentation>
@@ -156,7 +149,7 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="IdentifiableQueryType">
-        <xs:attribute name="version" type="VersionQueryType" default="*">
+        <xs:attribute name="version" type="common:VersionQueryType" default="*">
           <xs:annotation>
             <xs:documentation>The version attribute is used to query for an object based on its version. This can be and explicit value, wild-carded ("%"), or late-bound ("*"). A wild carded version will match any version of the object where as a late-bound version will only match the latest version.</xs:documentation>
           </xs:annotation>
