@@ -10,26 +10,26 @@
 
  <xs:annotation>
   <xs:documentation>This schema defines attributes and an attribute group
-  suitable for use by
-  schemas wishing to allow xml:base, xml:lang or xml:space attributes
-  on elements they define.
+	suitable for use by
+	schemas wishing to allow xml:base, xml:lang or xml:space attributes
+	on elements they define.
 
-  To enable this, such a schema must import this schema
-  for the XML namespace, e.g. as follows:
-  &lt;schema . . .>
-   . . .
-   &lt;import namespace="http://www.w3.org/XML/1998/namespace"
-        schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+	To enable this, such a schema must import this schema
+	for the XML namespace, e.g. as follows:
+	&lt;schema . . .>
+	 . . .
+	 &lt;import namespace="http://www.w3.org/XML/1998/namespace"
+		    schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
 
-  Subsequently, qualified reference to any of the attributes
-  or the group defined below will have the desired effect, e.g.
+	Subsequently, qualified reference to any of the attributes
+	or the group defined below will have the desired effect, e.g.
 
-  &lt;type . . .>
-   . . .
-   &lt;attributeGroup ref="xml:specialAttrs"/>
+	&lt;type . . .>
+	 . . .
+	 &lt;attributeGroup ref="xml:specialAttrs"/>
 
-   will define a type which will schema-validate an instance
-   element with any of those attributes</xs:documentation>
+	 will define a type which will schema-validate an instance
+	 element with any of those attributes</xs:documentation>
  </xs:annotation>
 
  <xs:annotation>
@@ -51,7 +51,7 @@
  <xs:attribute name="lang" type="xs:language">
   <xs:annotation>
    <xs:documentation>In due course, we should install the relevant ISO 2- and 3-letter
-   codes as the enumerated possible values . . .</xs:documentation>
+	 codes as the enumerated possible values . . .</xs:documentation>
   </xs:annotation>
  </xs:attribute>
 
@@ -67,7 +67,7 @@
  <xs:attribute name="base" type="xs:anyURI">
   <xs:annotation>
    <xs:documentation>See http://www.w3.org/TR/xmlbase/ for
-         information about this attribute.</xs:documentation>
+		     information about this attribute.</xs:documentation>
   </xs:annotation>
  </xs:attribute>
 
